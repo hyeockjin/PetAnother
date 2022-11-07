@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_tab">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".MainActivity" />
+
+            <LinearLayout
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="30dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="#ffffff"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="220dp"
+                        android:layout_marginLeft="8.8dp"
+                        android:layout_marginBottom="40dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="375dp"
+                            android:layout_height="45dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center|left"
+                            android:text="상세 정보"
+                            android:textColor="#000000"
+                            android:textSize="9pt"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="70dp"
+                                android:layout_height="20dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="5dp"
+                                android:text="닉네임 : "
+                                android:textColor="#000000"
+                                android:textSize="14dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/className"
+                                android:layout_width="290dp"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="5dp"
+                                android:text="용혁문"
+                                android:textColor="#000000"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="70dp"
+                                android:layout_height="20dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="7dp"
+                                android:text="나이 :  "
+                                android:textColor="#000000"
+                                android:textSize="14dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/classValue"
+                                android:layout_width="290dp"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="7dp"
+                                android:text="20대후반"
+                                android:textColor="#000000"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="7dp"
+                                android:text="주소:       "
+                                android:textColor="#000000"
+                                android:textSize="14dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/classAddress"
+                                android:layout_width="290dp"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="7dp"
+                                android:text="공간정보아카데미"
+                                android:textColor="#000000"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="7dp"
+                                android:text="별점 :       "
+                                android:textColor="#000000"
+                                android:textSize="14dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/subName"
+                                android:layout_width="290dp"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="7dp"
+                                android:text="★★★★★"
+                                android:textColor="#000000"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="70dp"
+                                android:layout_height="20dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="7dp"
+                                android:text="카테고리 : "
+                                android:textColor="#000000"
+                                android:textSize="14dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/mobile"
+                                android:layout_width="290dp"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="7dp"
+                                android:text="강아지전문 , 산책가능 , 단독주택"
+                                android:textColor="#000000"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/price"
+                                android:layout_width="70dp"
+                                android:layout_height="20dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="7dp"
+                                android:layout_marginBottom="25dp"
+                                android:text="자기소개"
+                                android:textColor="#000000"
+                                android:textSize="14dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/equip"
+                                android:layout_width="290dp"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="7dp"
+                                android:text="저희집 강아지라고 생각하고 돌봐드려요"
+                                android:textColor="#000000"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#000000"
+    tools:context=".Join1Fragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="회원가입(1/2)"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F6F6F6"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="30dp"
+                android:text="아래 항목에 전체 동의합니다."
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:minHeight="48dp"
+                android:text="본인은 만 19세 이상입니다.(필수)"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="서비스 이용약관 동의 (필수)"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/checkBox4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="개인정보 수집 이용 동의 (필수)"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/checkBox6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="위치기반서비스 이용약관 동의 (필수)"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/checkBox5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="안전보상지원 프로그램약관 동의 (필수)"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/checkBox8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="이벤트 및 마케팅 정보 수신 동의 (선택)"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/nextButton1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="#F8BBD0"
+                android:backgroundTint="#F8BBD0"
+                android:text="다음"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck,TextContrastCheck" />
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>
