@@ -7,14 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import com.lx.project5.databinding.FragmentAddDogBinding
 import com.lx.project5.databinding.FragmentCareMainBinding
+import com.lx.project5.databinding.FragmentCareTodolistBinding
 import com.lx.project5.databinding.FragmentFirstBinding
 
-class CareMainFragment : Fragment() {
-    var _binding: FragmentCareMainBinding? = null
+class CareTodolistFragment : Fragment() {
+    var _binding: FragmentCareTodolistBinding? = null
     val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = FragmentCareMainBinding.inflate(inflater, container, false)
+        _binding = FragmentCareTodolistBinding.inflate(inflater, container, false)
 
         return binding.root
     }
