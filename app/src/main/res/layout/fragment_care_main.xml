@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="48dp"
-        android:text="다음으로"
+        android:text="위치확인"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/firstButton3"
         app:layout_constraintStart_toEndOf="@+id/firstButton2" />
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="48dp"
-        android:text="다음으로"
+        android:text="채팅하기"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/firstButton"
         app:layout_constraintStart_toStartOf="parent" />
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="13dp"
         android:layout_marginBottom="48dp"
-        android:text="다음으로"
+        android:text="경로확인"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/firstButton4"
         app:layout_constraintHorizontal_bias="1.0"
@@ -60,7 +60,7 @@
         android:layout_marginStart="304dp"
         android:layout_marginEnd="18dp"
         android:layout_marginBottom="48dp"
-        android:text="다음으로"
+        android:text="맡김완료"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -202,7 +202,7 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
-                android:text="다음으로" />
+                android:text="할일보기" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
