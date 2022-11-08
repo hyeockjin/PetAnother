@@ -6,4 +6,5 @@ class AppData {
         var filepath: String?=null
         var loginData: LoginData?=null
     }
+    //유진바보
 }
