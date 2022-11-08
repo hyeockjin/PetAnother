@@ -44,13 +44,14 @@ class LoginFragment : Fragment() {
         val memberId = binding.loginId.text.toString()
         val memberPw = binding.loginPassword.text.toString()
 
-        BasicClient.api.postMemberRead(
+        BasicClient.api.postMemberLogin(
             requestCode = "1001",
             memberId = memberId,
             memberPw = memberPw
         ).enqueue(object : Callback<MemberListResponse> {
             override fun onResponse(call: Call<MemberListResponse>, response: Response<MemberListResponse>) {
                 val checkMember = response.body()?.header?.total.toString()
+                println(checkMember)
 
 
                 if(checkMember == "1"){

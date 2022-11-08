@@ -33,8 +33,8 @@ interface BasicApi {
      */
 
     @FormUrlEncoded
-    @POST("farm/memberRead")
-    fun postMemberRead(
+    @POST("care/memberLogin")
+    fun postMemberLogin(
         @Field("requestCode") requestCode: String,
         @Field("memberId") memberId: String,
         @Field("memberPw") memberPw: String
