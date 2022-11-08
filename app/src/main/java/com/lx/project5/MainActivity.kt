@@ -252,7 +252,7 @@ class MainActivity : AppCompatActivity() {
         ).enqueue(object : Callback<FileUploadResponse> {
             override fun onResponse(call: Call<FileUploadResponse>, response: Response<FileUploadResponse>) {
                 response.body()?.output?.filename?.apply{
-                    AppData.userdata?.filepath = this
+                    AppData.filepath = this
                 }
 
 

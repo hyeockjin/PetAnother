@@ -29,7 +29,7 @@ import kotlin.collections.HashMap
 interface BasicApi {
 
     /**
-     * POST 방식으로 멤버 로그인 요청
+     * POST 방식으로 멤버 로그인 요청 / 사용가능
      */
 
     @FormUrlEncoded
@@ -41,7 +41,7 @@ interface BasicApi {
     ): Call<MemberListResponse>
 
     /**
-     * POST 방식으로 멤버 회원가입 요청
+     * POST 방식으로 멤버 회원가입 요청 / 사용가능
      */
 
     @FormUrlEncoded
@@ -79,7 +79,7 @@ interface BasicApi {
     ): Call<MemberListResponse>
 
     /**
-     * GET 방식으로 주변 펫시터 요청
+     * GET 방식으로 주변 펫시터 요청 / 사용가능
      */
 
     @GET("farm/memberDelete")
@@ -92,7 +92,7 @@ interface BasicApi {
     ): Call<CareListResponse>
 
     /**
-     * 파일 업로드 요청
+     * 파일 업로드 요청 / 사용하자
      */
 
     @Multipart

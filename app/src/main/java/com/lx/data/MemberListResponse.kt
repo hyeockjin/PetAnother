@@ -8,6 +8,8 @@ data class MemberListResponse(
     val code: Int,
     @SerializedName("data")
     val `data`: List<Data>,
+    @SerializedName("header")
+    val header: Header,
     @SerializedName("message")
     val message: String
 ) {
@@ -22,5 +24,10 @@ data class MemberListResponse(
         val memberName: String,
         @SerializedName("memberPw")
         val memberPw: String
+    )
+
+    data class Header(
+        @SerializedName("total")
+        val total: Int
     )
 }
