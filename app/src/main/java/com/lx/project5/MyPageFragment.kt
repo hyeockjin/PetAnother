@@ -15,6 +15,9 @@ class MyPageFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentMyPageBinding.inflate(inflater, container, false)
 
+        binding.goDogList.setOnClickListener {
+
+        }
         return binding.root
     }
 
