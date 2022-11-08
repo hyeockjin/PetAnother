@@ -39,6 +39,16 @@ interface BasicApi {
         @Query("carey2") carey2: Int
     ): Call<CareListResponse>
 
+    /**
+     * 파일 업로드 요청
+     */
+
+    @Multipart
+    @POST("/community/upload")
+    fun uploadFile(
+        @Part file: MultipartBody.Part,
+        @Part(value="params", encoding="UTF-8") params: HashMap<String,String> = hashMapOf()
+    ): Call<FileUploadResponse>
 
 }
 

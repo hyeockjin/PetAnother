@@ -3,6 +3,8 @@ package com.lx.project5
 import android.Manifest
 import android.Manifest.permission.ACCESS_COARSE_LOCATION
 import android.Manifest.permission.ACCESS_FINE_LOCATION
+import android.content.Context
+import android.graphics.Bitmap
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,12 +18,22 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
+import com.lx.api.BasicClient
+import com.lx.data.FileUploadResponse
 import com.lx.project5.databinding.ActivityMainBinding
 import com.permissionx.guolindev.PermissionX
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.io.File
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
-
 
     var locationClient: FusedLocationProviderClient? = null
 
@@ -36,6 +48,9 @@ class MainActivity : AppCompatActivity() {
         ITEM4,
         ITEM5
     }
+
+    val dateFormat1 = SimpleDateFormat("yyyyMMddHHmmss")
+    var filename: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -201,6 +216,52 @@ class MainActivity : AppCompatActivity() {
             myMarker?.tag = "1001"
         }
 
+    }
+
+    //게시글에서 사진 찍은거 저장하기
+    fun saveFile(bitmap: Bitmap) {
+        filename = dateFormat1.format(Date()) + ".jpg"
+        bitmap?.apply {
+            openFileOutput(filename, Context.MODE_PRIVATE).use {
+                this.compress(Bitmap.CompressFormat.JPEG, 100, it)
+                it.close()
+
+                showToast("이미지를 파일로 저장함 : ${filename}")
+
+                uploadFile(filename!!)
+            }
+        }
+    }
+    fun uploadFile(filename:String){
+        // 저장한 파일에 대한 정보를 filePart로 만들기
+        val file = File("${filesDir}/${filename}")
+        val filePart = MultipartBody.Part.createFormData(
+            "photo",
+            filename,
+            file.asRequestBody("images/jpg".toMediaTypeOrNull())
+        )
+        // 추가 파라미터가 있는 경우
+        val params = hashMapOf<String, String>()
+
+        //api 에 있는 리스트 조회
+        BasicClient.api.uploadFile(
+            file = filePart,
+            params = params
+        ).enqueue(object : Callback<FileUploadResponse> {
+            override fun onResponse(call: Call<FileUploadResponse>, response: Response<FileUploadResponse>) {
+                response.body()?.output?.filename?.apply{
+                    AppData.userdata?.filepath = this
+                }
+
+
+            }
+
+            override fun onFailure(call: Call<FileUploadResponse>, t: Throwable) {
+
+            }
+
+
+        })
     }
 
     fun showToast(message:String) {

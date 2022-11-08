@@ -15,6 +15,10 @@ class Join1Fragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentJoin1Binding.inflate(inflater, container, false)
 
+        binding.nextButton1.setOnClickListener {
+
+        }
+
         return binding.root
     }
 
