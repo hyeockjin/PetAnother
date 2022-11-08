@@ -16,6 +16,7 @@ class Join1Fragment : Fragment() {
         _binding = FragmentJoin1Binding.inflate(inflater, container, false)
 
         binding.nextButton1.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMjoin2)
 
         }
 

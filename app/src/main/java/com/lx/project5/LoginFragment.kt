@@ -24,7 +24,7 @@ class LoginFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
 
-        binding.textView3.setOnClickListener {
+        binding.register.setOnClickListener {
             val curActivity = activity as MainActivity
             curActivity.onFragmentChanged(MainActivity.ScreenItem.ITEMjoin1)
         }
