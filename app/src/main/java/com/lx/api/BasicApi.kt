@@ -4,6 +4,7 @@ import android.util.Log
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable
 import com.lx.data.CareListResponse
 import com.lx.data.FileUploadResponse
+import com.lx.data.MemberListResponse
 import okhttp3.Interceptor
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
@@ -26,6 +27,57 @@ import kotlin.collections.HashMap
  * 웹서버 요청/응답을 처리하기 위한 기본 API
  */
 interface BasicApi {
+
+    /**
+     * POST 방식으로 멤버 로그인 요청
+     */
+
+    @FormUrlEncoded
+    @POST("farm/memberRead")
+    fun postMemberRead(
+        @Field("requestCode") requestCode: String,
+        @Field("memberId") memberId: String,
+        @Field("memberPw") memberPw: String
+    ): Call<MemberListResponse>
+
+    /**
+     * POST 방식으로 멤버 회원가입 요청
+     */
+
+    @FormUrlEncoded
+    @POST("farm/memberAdd")
+    fun postMemberAdd(
+        @Field("requestCode") requestCode: String,
+        @Field("memberId") memberId: String,
+        @Field("memberName") memberName: String,
+        @Field("memberMobile") memberMobile: String,
+        @Field("memberAddress") memberAddress: String,
+        @Field("memberPw") memberPw: String
+    ): Call<MemberListResponse>
+
+    /**
+     * POST 방식으로 멤버 비밀번호찾기 요청
+     */
+
+    @FormUrlEncoded
+    @POST("farm/memberFindPw")
+    fun postMemberFindPw(
+        @Field("requestCode") requestCode: String,
+        @Field("memberMobile") memberMobile: String,
+        @Field("memberName") memberName: String
+    ): Call<MemberListResponse>
+
+    /**
+     * POST 방식으로 아이디 중복체크 요청
+     */
+
+    @FormUrlEncoded
+    @POST("farm/memberIdOverlap")
+    fun postMemberCheckId(
+        @Field("requestCode") requestCode: String,
+        @Field("memberId") memberId: String
+    ): Call<MemberListResponse>
+
     /**
      * GET 방식으로 멤버 탈퇴 요청
      */
