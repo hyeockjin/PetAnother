@@ -52,6 +52,8 @@ class MainActivity : AppCompatActivity() {
     val dateFormat1 = SimpleDateFormat("yyyyMMddHHmmss")
     var filename: String? = null
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
