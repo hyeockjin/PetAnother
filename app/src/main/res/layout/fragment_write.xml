@@ -270,13 +270,20 @@
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/editButton2"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#F8BBD0"
-                android:backgroundTint="#F8BBD0"
-                android:text="작성하기" />
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/editButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#573E8B28"
+                    android:backgroundTint="#573E8B28"
+                    android:text="작성하기" />
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
