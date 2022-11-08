@@ -50,9 +50,9 @@ interface BasicApi {
         @Field("requestCode") requestCode: String,
         @Field("memberId") memberId: String,
         @Field("memberName") memberName: String,
-        @Field("memberMobile") memberMobile: String,
+        @Field("memberPw") memberPw: String,
         @Field("memberAddress") memberAddress: String,
-        @Field("memberPw") memberPw: String
+        @Field("memberImage") memberImage: String
     ): Call<MemberListResponse>
 
     /**
@@ -79,7 +79,7 @@ interface BasicApi {
     ): Call<MemberListResponse>
 
     /**
-     * GET 방식으로 멤버 탈퇴 요청
+     * GET 방식으로 주변 펫시터 요청
      */
 
     @GET("farm/memberDelete")
@@ -127,7 +127,7 @@ class BasicClient {
         private const val PROTOCOL = "http"
 
         // 기본 URL
-        private const val BASE_URL = "http://172.168.10.58:8001/"
+        private const val BASE_URL = "http://192.168.0.4:8001/"
 
         // 헤더 속성
         private const val CLIENT_ID = ""

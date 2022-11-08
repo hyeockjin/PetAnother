@@ -9,21 +9,18 @@ data class MemberListResponse(
     @SerializedName("data")
     val `data`: List<Data>,
     @SerializedName("message")
-    val message: String,
-    @SerializedName("header")
-    val header: Header
+    val message: String
 ) {
-
     data class Data(
-        @SerializedName("member_id")
+        @SerializedName("memberAddress")
+        val memberAddress: String,
+        @SerializedName("memberId")
         val memberId: String,
-        @SerializedName("member_name")
+        @SerializedName("memberImage")
+        val memberImage: String,
+        @SerializedName("memberName")
         val memberName: String,
-        @SerializedName("member_pw")
-        val memberPw: String,
-    )
-    data class Header(
-        @SerializedName("total")
-        val total: Int
+        @SerializedName("memberPw")
+        val memberPw: String
     )
 }
