@@ -26,7 +26,7 @@ class LoginFragment : Fragment() {
 
         binding.textView3.setOnClickListener {
             val curActivity = activity as MainActivity
-            curActivity.onFragmentChanged(MainActivity.ScreenItem.ITEM4)
+            curActivity.onFragmentChanged(MainActivity.ScreenItem.ITEMjoin1)
         }
 
         binding.loginButton.setOnClickListener {

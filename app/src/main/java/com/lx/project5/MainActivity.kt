@@ -149,7 +149,6 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-
     }
     fun onFragmentChanged(index:ScreenItem) {
         when(index) {
