@@ -45,8 +45,22 @@ class MainActivity : AppCompatActivity() {
         ITEM1,
         ITEM2,
         ITEM3,
-        ITEM4,
-        ITEM5
+        ITEMmyPage,
+        ITEMcareInfo,
+        ITEMaddDog,
+        ITEMassess,
+        ITEMcareMain,
+        ITEMcareTodolist,
+        ITEMcomplete,
+        ITEMeditDog,
+        ITEMjoin1,
+        ITEMjoin2,
+        ITEMlogin,
+        ITEMpay,
+        ITEMreservation,
+        ITEMwrite,
+        ITEMwriteList
+
     }
 
     val dateFormat1 = SimpleDateFormat("yyyyMMddHHmmss")
@@ -60,7 +74,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.cardView.setOnClickListener{
-            onFragmentChanged(ScreenItem.ITEM5)
+            onFragmentChanged(ScreenItem.ITEMcareInfo)
         }
         //하단 탭의 버튼을 눌렀을때
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
@@ -75,7 +89,7 @@ class MainActivity : AppCompatActivity() {
                     onFragmentChanged(ScreenItem.ITEM3)
                 }
                 R.id.tab4 -> {
-                    onFragmentChanged(ScreenItem.ITEM4)
+                    onFragmentChanged(ScreenItem.ITEMmyPage)
                 }
             }
             return@setOnNavigationItemSelectedListener true
@@ -148,13 +162,53 @@ class MainActivity : AppCompatActivity() {
             ScreenItem.ITEM3 -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, ThirdFragment()).commit()
             }
-            ScreenItem.ITEM4 -> {
+            ScreenItem.ITEMmyPage -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, MyPageFragment()).commit()
             }
-            ScreenItem.ITEM5 -> {
+            ScreenItem.ITEMcareInfo -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, CareInfoFragment()).commit()
             }
+            ScreenItem.ITEMaddDog -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, AddDogFragment()).commit()
+            }
+            ScreenItem.ITEMassess -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, AssessFragment()).commit()
+            }
+            ScreenItem.ITEMcareMain -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, CareMainFragment()).commit()
+            }
+            ScreenItem.ITEMcareTodolist -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, CareTodolistFragment()).commit()
+            }
+            ScreenItem.ITEMcomplete -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, CompleteFragment()).commit()
+            }
+            ScreenItem.ITEMeditDog -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, EditDogFragment()).commit()
+            }
+            ScreenItem.ITEMjoin1 -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, Join1Fragment()).commit()
+            }
+            ScreenItem.ITEMjoin2 -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, Join2Fragment()).commit()
+            }
+            ScreenItem.ITEMlogin -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, LoginFragment()).commit()
+            }
+            ScreenItem.ITEMpay -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, LoginFragment()).commit()
+            }
+            ScreenItem.ITEMreservation -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, ReservationFragment()).commit()
+            }
+            ScreenItem.ITEMwrite -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, WriteFragment()).commit()
+            }
+            ScreenItem.ITEMwriteList -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, WriteListFragment()).commit()
+            }
         }
+
 
     }
     fun requestLocation() {
