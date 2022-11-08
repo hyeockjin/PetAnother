@@ -3,9 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:backgroundTint="#FFFFFF"
-    tools:context=".WriteListFragment">
+    tools:context=".WriteandlistFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,25 +17,21 @@
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_marginTop="20dp"
             android:gravity="center_horizontal|center_vertical"
-            android:text="내가 쓴 맡김글"
+            android:text="게시글 상세"
             android:textSize="20sp"
             android:textStyle="normal" />
 
-        <Button
-            android:id="@+id/button9"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_gravity="end"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/bold"
-            android:backgroundTint="#170101"
-            android:text="+ 작성하기"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="550dp"
+            android:layout_weight="1">
+
+        </androidx.recyclerview.widget.RecyclerView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
 
     </LinearLayout>
-
 </FrameLayout>

@@ -261,8 +261,8 @@
                 android:id="@+id/addButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#F8BBD0"
-                android:backgroundTint="#F8BBD0"
+                android:background="#573E8B28"
+                android:backgroundTint="#573E8B28"
                 android:text="등록하기" />
         </LinearLayout>
     </ScrollView>
