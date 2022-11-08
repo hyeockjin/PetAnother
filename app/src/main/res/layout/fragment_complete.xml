@@ -116,7 +116,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="40dp"
                     android:text="리뷰작성"
                     android:textColor="#000000"
                     android:textSize="16sp" />
@@ -134,7 +134,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="140dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
                     android:backgroundTint="#573E8B28"
                     android:text="리뷰작성" />
 
@@ -159,7 +159,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="140dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
                     android:backgroundTint="#573E8B28"
                     android:text="맡김완료" />
             </LinearLayout>
