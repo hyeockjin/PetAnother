@@ -2,8 +2,8 @@ package com.lx.api
 
 import android.util.Log
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable
+import com.lx.data.CareListResponse
 import com.lx.data.FileUploadResponse
-import com.lx.data.StudentListResponse
 import okhttp3.Interceptor
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
@@ -26,6 +26,18 @@ import kotlin.collections.HashMap
  * 웹서버 요청/응답을 처리하기 위한 기본 API
  */
 interface BasicApi {
+    /**
+     * GET 방식으로 멤버 탈퇴 요청
+     */
+
+    @GET("farm/memberDelete")
+    fun getCareList(
+        @Query("requestCode") requestCode: String,
+        @Query("carex1") carex1: Int,
+        @Query("carex2") carex2: Int,
+        @Query("carey1") carey1: Int,
+        @Query("carey2") carey2: Int
+    ): Call<CareListResponse>
 
 
 }
