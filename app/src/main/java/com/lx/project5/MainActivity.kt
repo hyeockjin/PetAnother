@@ -89,7 +89,12 @@ class MainActivity : AppCompatActivity() {
                     onFragmentChanged(ScreenItem.ITEM3)
                 }
                 R.id.tab4 -> {
-                    onFragmentChanged(ScreenItem.ITEMmyPage)
+                    if(LoginData.memberId == null){
+                        onFragmentChanged(ScreenItem.ITEMlogin)
+                    }else if (LoginData.memberId != null){
+                        onFragmentChanged(ScreenItem.ITEMmyPage)
+                    }
+
                 }
             }
             return@setOnNavigationItemSelectedListener true
