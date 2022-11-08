@@ -33,7 +33,8 @@ class MainActivity : AppCompatActivity() {
         ITEM1,
         ITEM2,
         ITEM3,
-        ITEM4
+        ITEM4,
+        ITEM5
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +42,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        binding.cardView.setOnClickListener{
+            onFragmentChanged(ScreenItem.ITEM5)
+        }
         //하단 탭의 버튼을 눌렀을때
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId) {
@@ -130,6 +133,9 @@ class MainActivity : AppCompatActivity() {
             }
             ScreenItem.ITEM4 -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, MyPageFragment()).commit()
+            }
+            ScreenItem.ITEM5 -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, CareInfoFragment()).commit()
             }
         }
 
