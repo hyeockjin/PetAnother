@@ -60,7 +60,7 @@ interface BasicApi {
      */
 
     @FormUrlEncoded
-    @POST("farm/memberFindPw")
+    @POST("care/memberFindPw")
     fun postMemberFindPw(
         @Field("requestCode") requestCode: String,
         @Field("memberMobile") memberMobile: String,
@@ -72,7 +72,7 @@ interface BasicApi {
      */
 
     @FormUrlEncoded
-    @POST("farm/memberIdOverlap")
+    @POST("care/memberIdOverlap")
     fun postMemberCheckId(
         @Field("requestCode") requestCode: String,
         @Field("memberId") memberId: String
@@ -82,7 +82,7 @@ interface BasicApi {
      * GET 방식으로 주변 펫시터 요청 / 사용가능
      */
 
-    @GET("farm/memberDelete")
+    @GET("care/memberDelete")
     fun getCareList(
         @Query("requestCode") requestCode: String,
         @Query("carex1") carex1: Int,
@@ -101,6 +101,8 @@ interface BasicApi {
         @Part file: MultipartBody.Part,
         @Part(value="params", encoding="UTF-8") params: HashMap<String,String> = hashMapOf()
     ): Call<FileUploadResponse>
+
+    abstract fun postMemberAdd(requestCode: String, memberId: String, memberPw: String, memberName: String): Call<MemberListResponse>
 
 }
 

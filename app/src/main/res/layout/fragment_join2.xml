@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/profileImageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName"
+                    android:id="@+id/registerId"
                     android:layout_width="218dp"
                     android:layout_height="48dp"
                     android:layout_marginLeft="44dp"
@@ -73,7 +73,7 @@
                     tools:ignore="TouchTargetSizeCheck" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/idCheckButton"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="7dp"
@@ -91,7 +91,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName2"
+                    android:id="@+id/registerName"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -102,24 +102,24 @@
                     android:minHeight="48dp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName4"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:ems="10"
-                    android:hint="비밀번호 확인"
-                    android:inputType="textPersonName"
-                    android:minHeight="48dp" />
-
-                <EditText
-                    android:id="@+id/editTextTextPersonName3"
+                    android:id="@+id/registerPw"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:ems="10"
                     android:hint="비밀번호"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp" />
+
+                <EditText
+                    android:id="@+id/pwCheck"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:hint="비밀번호 확인"
                     android:inputType="textPersonName"
                     android:minHeight="48dp" />
 

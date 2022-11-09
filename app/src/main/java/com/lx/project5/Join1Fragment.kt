@@ -23,4 +23,5 @@ class Join1Fragment : Fragment() {
         return binding.root
     }
 
+
 }
