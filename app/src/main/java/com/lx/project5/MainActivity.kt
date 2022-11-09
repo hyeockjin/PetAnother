@@ -89,9 +89,9 @@ class MainActivity : AppCompatActivity() {
                     onFragmentChanged(ScreenItem.ITEM3)
                 }
                 R.id.tab4 -> {
-                    if(LoginData.memberId == null){
+                    if(AppData.loginData?.memberId == null){
                         onFragmentChanged(ScreenItem.ITEMlogin)
-                    }else if (LoginData.memberId != null){
+                    }else if (AppData.loginData?.memberId != null){
                         onFragmentChanged(ScreenItem.ITEMmyPage)
                     }
 
