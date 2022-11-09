@@ -138,7 +138,7 @@ class MainActivity : AppCompatActivity() {
 
             // 지도 클릭 시 처리
             map.setOnMapClickListener {
-                showToast("지도 클릭됨 : ${it.latitude}, ${it.longitude}")
+                //showToast("지도 클릭됨 : ${it.latitude}, ${it.longitude}")
                 //카드뷰 안보이게
                 binding.cardView.visibility = View.GONE
             }
@@ -146,7 +146,7 @@ class MainActivity : AppCompatActivity() {
             // 보고있는 지도 영역 구분
             map.setOnCameraIdleListener {
                 val bounds = map.projection.visibleRegion.latLngBounds
-                showToast("좌상단 : ${bounds.northeast}, ${bounds.southwest}")
+                //showToast("좌상단 : ${bounds.northeast}, ${bounds.southwest}")
 
                 val zoomLevel = map.cameraPosition.zoom
                 println("zoomLevel : ${zoomLevel}")

@@ -1,5 +1,8 @@
 package com.lx.project5
 
+import android.service.autofill.UserData
+
+
 class AppData {
     companion object {
         var userdata: String?=null
