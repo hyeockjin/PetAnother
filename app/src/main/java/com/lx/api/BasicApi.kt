@@ -45,7 +45,7 @@ interface BasicApi {
      */
 
     @FormUrlEncoded
-    @POST("farm/memberAdd")
+    @POST("care/memberAdd")
     fun postMemberAdd(
         @Field("requestCode") requestCode: String,
         @Field("memberId") memberId: String,
