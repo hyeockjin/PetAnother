@@ -30,8 +30,8 @@ class LoginFragment : Fragment() {
         }
 
         binding.loginButton.setOnClickListener {
-            LoginData.memberId = binding.loginId.text.toString()
-            LoginData.memberPw = binding.loginPassword.text.toString()
+            AppData.loginData?.memberId = binding.loginId.text.toString()
+            AppData.loginData?.memberPw = binding.loginPassword.text.toString()
 
 
             readMember()
@@ -55,11 +55,11 @@ class LoginFragment : Fragment() {
 
 
                 if(checkMember == "1"){
-                    LoginData.memberId = memberId
-                    LoginData.memberPw = memberPw
-                    LoginData.memberName = response.body()?.data?.get(0)?.memberName.toString()
-                    LoginData.memberAddress = response.body()?.data?.get(0)?.memberAddress.toString()
-                    LoginData.memberImage = response.body()?.data?.get(0)?.memberImage.toString()
+                    AppData.loginData?.memberId = memberId
+                    AppData.loginData?.memberPw = memberPw
+                    AppData.loginData?.memberName = response.body()?.data?.get(0)?.memberName.toString()
+                    AppData.loginData?.memberAddress = response.body()?.data?.get(0)?.memberAddress.toString()
+                    AppData.loginData?.memberImage = response.body()?.data?.get(0)?.memberImage.toString()
                     (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
                 } else if(checkMember == "0"){
                     val builder = AlertDialog.Builder(activity)
