@@ -27,9 +27,8 @@
                 android:textStyle="normal" />
 
             <androidx.cardview.widget.CardView
-                android:cardBackgroundColor="#FAFAFA"
-                android:cardCornerRadius="8dp"
-                android:contentPadding="10dp"
+
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp">
