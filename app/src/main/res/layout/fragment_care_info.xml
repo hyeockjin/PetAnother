@@ -18,112 +18,263 @@
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_marginTop="20dp"
             android:gravity="center_horizontal|center_vertical"
-            android:text="맡김이 정보확인"
+            android:text="돌봄 신청 정보"
             android:textSize="20sp"
             android:textStyle="normal" />
 
         <LinearLayout
-            android:layout_width="380dp"
-            android:layout_height="592dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="신청자"
+                android:textSize="16sp" />
 
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="105dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/person1" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="#FAFAFA"
+                app:cardCornerRadius="8dp"
+                app:contentPadding="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:orientation="vertical"
-                    android:padding="10dp">
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/textView7"
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        app:srcCompat="@drawable/person1" />
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="18dp"
-                        android:text="김용현"
-                        android:textSize="20sp" />
+                        android:layout_marginLeft="5dp"
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/textView8"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="yyyhhhmmm"
-                        android:textColor="#C18686"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp">
 
-                    <TextView
-                        android:id="@+id/textView9"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="010-1111-1111"
-                        android:textSize="20sp" />
+                            <TextView
+                                android:id="@+id/textView25"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:text="김용현"
+                                android:textSize="20sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <Button
+                                    android:id="@+id/button6"
+                                    android:layout_width="65dp"
+                                    android:layout_height="25dp"
+                                    android:layout_gravity="end"
+                                    android:background="#573E8B28"
+                                    android:backgroundTint="#573E8B28"
+                                    android:text="자세히보기"
+                                    android:textSize="10sp"
+                                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="반려견"
+                android:textSize="16sp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="#FAFAFA"
+                app:cardCornerRadius="8dp"
+                app:contentPadding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView88"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        app:srcCompat="@drawable/dogicon" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp">
+
+                            <TextView
+                                android:id="@+id/textView258"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:text="용현문"
+                                android:textSize="20sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <Button
+                                    android:id="@+id/button8"
+                                    android:layout_width="65dp"
+                                    android:layout_height="25dp"
+                                    android:layout_gravity="end"
+                                    android:background="#573E8B28"
+                                    android:backgroundTint="#573E8B28"
+                                    android:text="자세히보기"
+                                    android:textSize="10sp"
+                                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="357dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:background="#F3F3F3"
-                    android:backgroundTint="#F3F3F3"
-                    app:cardBackgroundColor="#FAFAFA"
-                    app:cardCornerRadius="8dp"
-                    app:contentPadding="10dp">
-
-                    <TextView
-                        android:id="@+id/textView12"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="돌보미 2년차 김용현입니다. 강아지 키워본 경력은 12년 됐습니다. 믿고 맡기셔도 됩니다" />
-
-                </androidx.cardview.widget.CardView>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical" />
+            </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/textView11"
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:text="돌봄기간" />
+
+                <EditText
+                    android:id="@+id/output1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="#F6F6F6"
+                    android:gravity="center_vertical"
+                    android:hint="용현문"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:text="할 일" />
+
+                <EditText
+                    android:id="@+id/output55"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="#F6F6F6"
+                    android:gravity="center_vertical"
+                    android:hint="3"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:text="특이사항" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="146dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp">
+
+                    <EditText
+                        android:id="@+id/output2"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="bottom"
-                        android:paddingStart="20dp"
-                        android:paddingTop="20dp"
-                        android:text="후기" />
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="357dp"
-                        android:layout_height="224dp"
-                        android:layout_margin="10dp"
-                        android:background="#F3F3F3"
-                        android:backgroundTint="#F3F3F3"
-                        app:cardBackgroundColor="#FAFAFA"
-                        app:cardCornerRadius="8dp"
-                        app:contentPadding="10dp" />
+                        android:layout_height="142dp"
+                        android:layout_weight="1"
+                        android:background="#F6F6F6"
+                        android:gravity="center_vertical"
+                        android:padding="16dp"
+                        android:textSize="14sp"
+                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
                 </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>
