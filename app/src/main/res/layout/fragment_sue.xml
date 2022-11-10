@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal"
-    tools:context=".AddDogFragment">
+    android:layout_height="match_parent"
+    tools:context=".SueFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,7 +12,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView4"
@@ -23,18 +21,18 @@
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_marginTop="20dp"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="반려동물 수정"
+                android:text="신고하기"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:textStyle="normal" />
 
             <androidx.cardview.widget.CardView
+                android:cardBackgroundColor="#FAFAFA"
+                android:cardCornerRadius="8dp"
+                android:contentPadding="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                app:cardBackgroundColor="#FAFAFA"
-                app:cardCornerRadius="8dp"
-                app:contentPadding="10dp">
+                android:layout_margin="10dp">
 
                 <LinearLayout
                     android:layout_width="380dp"
@@ -68,14 +66,14 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="58dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:padding="16dp"
-                                android:text="이름" />
+                                android:text="제목" />
 
                             <EditText
-                                android:id="@+id/nameOutput2"
+                                android:id="@+id/nameInput"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="20dp"
@@ -95,14 +93,14 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:padding="16dp"
-                                android:text="성별" />
+                                android:text="접수일자" />
 
                             <TextView
-                                android:id="@+id/genderOutput2"
+                                android:id="@+id/genderInput"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="20dp"
@@ -120,106 +118,20 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:padding="16dp"
-                                android:text="나이" />
+                                android:text="신고내용" />
 
                             <TextView
-                                android:id="@+id/ageOutput2"
-                                android:layout_width="match_parent"
+                                android:id="@+id/textView40"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginRight="20dp"
                                 android:layout_weight="1"
-                                android:background="#eeeeee"
-                                android:gravity="center_vertical"
-                                android:hint="나이를 입력하세요."
-                                android:padding="10dp"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:padding="16dp"
-                                android:text="견종" />
-
-                            <TextView
-                                android:id="@+id/typeOutput2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="20dp"
-                                android:layout_weight="1"
-                                android:background="#eeeeee"
-                                android:gravity="center_vertical"
-                                android:hint="견종을 입력하세요."
-                                android:padding="10dp"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:orientation="vertical"
-                            android:padding="5dp">
-
-                            <TextView
-                                android:id="@+id/textView1"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="만지면 물거나 예민하게 반응하는 부위가 있나요? (ex. 얼굴, 가슴, 발)"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <EditText
-                                android:id="@+id/output21"
-                                android:layout_width="367dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="20dp"
-                                android:layout_weight="1"
-                                android:background="#eeeeee"
-                                android:gravity="center_vertical"
-                                android:padding="10dp"
-                                android:textSize="14sp"
-                                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:orientation="vertical"
-                            android:padding="5dp">
-
-                            <TextView
-                                android:id="@+id/textView2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="사람을 물거나 다른 강아지를 공격한 적이 있나요?"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <EditText
-                                android:id="@+id/output22"
-                                android:layout_width="367dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="20dp"
-                                android:layout_weight="1"
-                                android:background="#eeeeee"
-                                android:gravity="center_vertical"
-                                android:padding="10dp"
-                                android:textSize="14sp"
-                                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                                android:text="다른 사용자에게 보이는 정보입니다." />
 
                         </LinearLayout>
 
@@ -230,16 +142,8 @@
                             android:orientation="vertical"
                             android:padding="5dp">
 
-                            <TextView
-                                android:id="@+id/register"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="예방접종을 완료 하셨나요?"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
                             <EditText
-                                android:id="@+id/output23"
+                                android:id="@+id/input3"
                                 android:layout_width="367dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="20dp"
@@ -264,14 +168,13 @@
                 android:padding="10dp">
 
                 <Button
-                    android:id="@+id/editButton"
+                    android:id="@+id/addButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#573E8B28"
                     android:backgroundTint="#573E8B28"
-                    android:text="수정하기" />
+                    android:text="신고하기" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
 </FrameLayout>

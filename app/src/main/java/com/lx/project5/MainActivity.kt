@@ -47,12 +47,10 @@ class MainActivity : AppCompatActivity() {
         ITEM3,
         ITEMmyPage,
         ITEMcareInfo,
-        ITEMaddDog,
         ITEMassess,
         ITEMcareMain,
         ITEMcareTodolist,
         ITEMcomplete,
-        ITEMeditDog,
         ITEMjoin1,
         ITEMjoin2,
         ITEMlogin,
@@ -172,9 +170,6 @@ class MainActivity : AppCompatActivity() {
             ScreenItem.ITEMcareInfo -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, CareInfoFragment()).commit()
             }
-            ScreenItem.ITEMaddDog -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, AddDogFragment()).commit()
-            }
             ScreenItem.ITEMassess -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, AssessFragment()).commit()
             }
@@ -186,9 +181,6 @@ class MainActivity : AppCompatActivity() {
             }
             ScreenItem.ITEMcomplete -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, CompleteFragment()).commit()
-            }
-            ScreenItem.ITEMeditDog -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, EditDogFragment()).commit()
             }
             ScreenItem.ITEMjoin1 -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, Join1Fragment()).commit()

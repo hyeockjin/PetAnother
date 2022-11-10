@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.lx.project5.databinding.FragmentAddDogBinding
-import com.lx.project5.databinding.FragmentFirstBinding
 
 class AddDogFragment : Fragment() {
     var _binding: FragmentAddDogBinding? = null

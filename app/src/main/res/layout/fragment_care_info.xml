@@ -18,7 +18,7 @@
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_marginTop="20dp"
             android:gravity="center_horizontal|center_vertical"
-            android:text="돌보미 정보확인"
+            android:text="맡김이 정보확인"
             android:textSize="20sp"
             android:textStyle="normal" />
 

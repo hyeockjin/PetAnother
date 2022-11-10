@@ -4,9 +4,7 @@ import android.net.Uri
 import android.service.autofill.UserData
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.lx.project5.databinding.CareItemBinding
 
 

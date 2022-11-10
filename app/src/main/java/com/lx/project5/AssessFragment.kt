@@ -5,9 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.lx.project5.databinding.FragmentAddDogBinding
 import com.lx.project5.databinding.FragmentAssessBinding
-import com.lx.project5.databinding.FragmentFirstBinding
+
 
 class AssessFragment : Fragment() {
     var _binding: FragmentAssessBinding? = null

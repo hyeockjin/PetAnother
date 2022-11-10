@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.lx.project5.databinding.FragmentJoin1Binding
-import com.lx.project5.databinding.FragmentLoginBinding
+
 
 class Join1Fragment : Fragment() {
     var _binding: FragmentJoin1Binding? = null

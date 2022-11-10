@@ -15,7 +15,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.lx.api.BasicClient
 import com.lx.data.MemberListResponse
-import com.lx.project5.databinding.FragmentJoin1Binding
 import com.lx.project5.databinding.FragmentJoin2Binding
 import retrofit2.Call
 import retrofit2.Callback
