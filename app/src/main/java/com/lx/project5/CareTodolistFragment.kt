@@ -15,6 +15,16 @@ class CareTodolistFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentCareTodolistBinding.inflate(inflater, container, false)
 
+        binding.button4.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareMain)
+
+        }
+
+        binding.imageButton3.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareMain)
+
+        }
+
         return binding.root
     }
 

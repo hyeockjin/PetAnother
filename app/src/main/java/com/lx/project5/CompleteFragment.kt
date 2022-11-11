@@ -14,6 +14,17 @@ class CompleteFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentCompleteBinding.inflate(inflater, container, false)
 
+        binding.reviewButton.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMassess)
+
+        }
+
+        binding.completeButton.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMend)
+
+        }
+
+
         return binding.root
     }
 

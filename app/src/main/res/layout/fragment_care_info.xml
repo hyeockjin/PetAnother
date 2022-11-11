@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".CareInfoFragment">
 
     <LinearLayout
@@ -11,16 +12,41 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView4"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="46dp"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_marginTop="20dp"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="돌봄 신청 정보"
-            android:textSize="20sp"
-            android:textStyle="normal" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/imageButton3"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="5dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/arrow"
+                    android:stateListAnimator="@null"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="30dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="돌봄신청정보"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,7 +61,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical" >
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/textView3"
@@ -309,14 +335,6 @@
                             android:backgroundTint="#573E8B28"
                             android:text="채팅" />
 
-                        <Button
-                            android:id="@+id/button3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="#573E8B28"
-                            android:backgroundTint="#573E8B28"
-                            android:text="돌아가기" />
                     </LinearLayout>
 
                 </LinearLayout>

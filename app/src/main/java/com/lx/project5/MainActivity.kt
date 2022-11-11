@@ -57,7 +57,9 @@ class MainActivity : AppCompatActivity() {
         ITEMpay,
         ITEMreservation,
         ITEMwrite,
-        ITEMwriteList
+        ITEMwriteList,
+        ITEMaddDog,
+        ITEMend
 
     }
 
@@ -81,7 +83,7 @@ class MainActivity : AppCompatActivity() {
                     onFragmentChanged(ScreenItem.ITEM1)
                 }
                 R.id.tab2 -> {
-                    onFragmentChanged(ScreenItem.ITEM2)
+                    onFragmentChanged(ScreenItem.ITEMcareMain)
                 }
                 R.id.tab3 -> {
                     onFragmentChanged(ScreenItem.ITEM3)
@@ -202,6 +204,12 @@ class MainActivity : AppCompatActivity() {
             }
             ScreenItem.ITEMwriteList -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, WriteListFragment()).commit()
+            }
+            ScreenItem.ITEMaddDog -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, AddDogFragment()).commit()
+            }
+            ScreenItem.ITEMend -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, EndFragment()).commit()
             }
         }
 

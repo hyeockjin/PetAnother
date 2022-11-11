@@ -15,6 +15,21 @@ class CareMainFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentCareMainBinding.inflate(inflater, container, false)
 
+        binding.todoButton.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareTodolist)
+
+        }
+
+        binding.Button5.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMaddDog)
+
+        }
+
+        binding.completeButton1.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcomplete)
+
+        }
+
         return binding.root
     }
 
