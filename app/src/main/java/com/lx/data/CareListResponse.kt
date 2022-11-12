@@ -8,6 +8,8 @@ data class CareListResponse(
     val code: Int,
     @SerializedName("data")
     val `data`: List<Data>,
+    @SerializedName("header")
+    val header: Header,
     @SerializedName("message")
     val message: String
 ) {
@@ -25,7 +27,7 @@ data class CareListResponse(
         @SerializedName("careId")
         val careId: String,
         @SerializedName("careImage")
-        val careImage: Any?,
+        val careImage: String,
         @SerializedName("careN")
         val careN: String,
         @SerializedName("careNickname")
@@ -37,7 +39,15 @@ data class CareListResponse(
         @SerializedName("careX")
         val careX: Double,
         @SerializedName("careY")
-        val careY: Double
+        val careY: Double,
+        @SerializedName("lat")
+        val lat: Double,
+        @SerializedName("lng")
+        val lng: Double
+    )
+    data class Header(
+        @SerializedName("total")
+        val total: Int
     )
 
 }

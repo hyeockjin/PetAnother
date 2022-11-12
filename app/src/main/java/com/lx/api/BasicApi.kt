@@ -33,11 +33,11 @@ interface BasicApi {
      */
 
     @FormUrlEncoded
-    @POST("care/memberLogin")
-    fun postMemberLogin(
+    @POST("care/careLogin")
+    fun postCareLogin(
         @Field("requestCode") requestCode: String,
-        @Field("memberId") memberId: String,
-        @Field("memberPw") memberPw: String
+        @Field("careId") memberId: String,
+        @Field("carePw") memberPw: String
     ): Call<MemberListResponse>
 
     /**
@@ -45,15 +45,19 @@ interface BasicApi {
      */
 
     @FormUrlEncoded
-    @POST("care/memberAdd")
-    fun postMemberAdd(
+    @POST("care/careAdd")
+    fun postCareAdd(
         @Field("requestCode") requestCode: String,
-        @Field("memberId") memberId: String,
-        @Field("memberName") memberName: String,
-        @Field("memberPw") memberPw: String,
-        @Field("memberAddress") memberAddress: String,
-        @Field("memberImage") memberImage: String
-    ): Call<MemberListResponse>
+        @Field("careId") careId: String,
+        @Field("careName") careName: String,
+        @Field("carePw") carePw: String,
+        @Field("careExperience") careExperience: String,
+        @Field("careEducation") careEducation: String,
+        @Field("careImage") careImage: String,
+        @Field("careApproval") careApproval: String,
+        @Field("lat") lat: Double,
+        @Field("lng") lng: Double
+    ): Call<CareListResponse>
 
     /**
      * POST 방식으로 멤버 비밀번호찾기 요청
@@ -72,11 +76,11 @@ interface BasicApi {
      */
 
     @FormUrlEncoded
-    @POST("care/memberIdOverlap")
-    fun postMemberCheckId(
+    @POST("care/careIdOverlap")
+    fun postCareCheckId(
         @Field("requestCode") requestCode: String,
-        @Field("memberId") memberId: String
-    ): Call<MemberListResponse>
+        @Field("careId") careId: String
+    ): Call<CareListResponse>
 
     /**
      * GET 방식으로 주변 펫시터 요청 / 사용가능
@@ -101,8 +105,6 @@ interface BasicApi {
         @Part file: MultipartBody.Part,
         @Part(value="params", encoding="UTF-8") params: HashMap<String,String> = hashMapOf()
     ): Call<FileUploadResponse>
-
-    abstract fun postMemberAdd(requestCode: String, memberId: String, memberPw: String, memberName: String): Call<MemberListResponse>
 
 }
 

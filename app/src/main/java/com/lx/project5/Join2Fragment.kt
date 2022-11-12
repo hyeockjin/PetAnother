@@ -14,7 +14,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.lx.api.BasicClient
-import com.lx.data.MemberListResponse
+import com.lx.data.CareListResponse
 import com.lx.project5.databinding.FragmentJoin2Binding
 import retrofit2.Call
 import retrofit2.Callback
@@ -26,6 +26,7 @@ class Join2Fragment : Fragment() {
 
     var bitmap: Bitmap? = null
     var saveBitmap: Bitmap? = null
+    var careImage: String? = "1"
 
     //앨범에서 가져오기위한 런처
     val albumLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
@@ -64,6 +65,11 @@ class Join2Fragment : Fragment() {
             checkId()
         }
 
+        binding.locationButton.setOnClickListener {
+            val locationIntent= Intent(activity,LocalActivity::class.java)
+            startActivity(locationIntent)
+        }
+
         return binding.root
     }
 
@@ -84,7 +90,7 @@ class Join2Fragment : Fragment() {
         var pwCheck = binding.pwCheck.text.toString()
 
         if(registerPw.equals(pwCheck)) {
-            postMemberAdd()
+            postCareAdd()
         } else {
             val builder = AlertDialog.Builder(activity)
             builder.setTitle("회원가입")
@@ -100,11 +106,11 @@ class Join2Fragment : Fragment() {
     fun checkId() {
         var registerId = binding.registerId.text.toString()
 
-        BasicClient.api.postMemberCheckId(
+        BasicClient.api.postCareCheckId(
             requestCode = "1001",
-            memberId = registerId
-        ).enqueue(object: Callback<MemberListResponse> {
-            override fun onResponse(call: Call<MemberListResponse>, response: Response<MemberListResponse>){
+            careId = registerId
+        ).enqueue(object: Callback<CareListResponse> {
+            override fun onResponse(call: Call<CareListResponse>, response: Response<CareListResponse>){
                 val checkId = response.body()?.header?.total.toString()
 
                 if(checkId == "1"){
@@ -128,34 +134,44 @@ class Join2Fragment : Fragment() {
                 }
             }
 
-            override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
+            override fun onFailure(call: Call<CareListResponse>, t: Throwable) {
 
             }
 
         })
     }
 
-    //멤버리스트 추가 [파라미터]
-    fun postMemberAdd(){
+    //돌보미리스트 추가 [파라미터]
+    fun postCareAdd(){
 
         var registerId = binding.registerId.text.toString()
         var registerName = binding.registerName.text.toString()
         var registerPw = binding.registerPw.text.toString()
+        var registerExperience = binding.petExperienceInput.text.toString()
+        var registerEducation = binding.petEducationInput.text.toString()
+        val lat = AppData.lat?.toDouble()
+        val lng = AppData.lng?.toDouble()
 
 
-        BasicClient.api.postMemberAdd(
+        BasicClient.api.postCareAdd(
             requestCode = "1001",
-            memberId = registerId,
-            memberPw =registerPw,
-            memberName =registerName
+            careId = registerId,
+            carePw = registerPw,
+            careName = registerName,
+            careExperience = registerExperience,
+            careEducation = registerEducation,
+            careImage = careImage!!,
+            careApproval = "1",
+            lat = lat!!,
+            lng = lng!!
 
-        ).enqueue(object:Callback<MemberListResponse>{
-            override fun onResponse(call: Call<MemberListResponse>,response: Response<MemberListResponse>){
-                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEM1)
+        ).enqueue(object:Callback<CareListResponse>{
+            override fun onResponse(call: Call<CareListResponse>,response: Response<CareListResponse>){
+                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMlogin)
             }
 
-            override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
-                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEM1)
+            override fun onFailure(call: Call<CareListResponse>, t: Throwable) {
+                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMlogin)
             }
 
         })

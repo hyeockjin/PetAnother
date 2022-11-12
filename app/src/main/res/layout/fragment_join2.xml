@@ -4,13 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
     tools:context=".Join2Fragment">
 
-    <LinearLayout
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,124 +45,195 @@
                 android:textSize="20sp"
                 android:textStyle="normal" />
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#F6F6F6"
-            android:orientation="vertical"
-            android:padding="10dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <TextView
+                android:id="@+id/textView4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/profileImageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/person2"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/addProfileButton2"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="88dp"
-                    android:background="@android:drawable/ic_menu_add"
-                    app:layout_constraintEnd_toEndOf="@+id/profileImageView"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="@+id/profileImageView"
-                    app:layout_constraintTop_toTopOf="@+id/profileImageView" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_height="46dp"
+                android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_marginTop="20dp"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/registerId"
-                    android:layout_width="218dp"
-                    android:layout_height="48dp"
-                    android:layout_marginLeft="44dp"
-                    android:ems="10"
-                    android:hint="아이디"
-                    android:inputType="textPersonName"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-                <Button
-                    android:id="@+id/idCheckButton"
-                    android:layout_width="75dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="7dp"
-                    android:background="#CABAAA"
-                    android:backgroundTint="#CABAAA"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="중복확인"
-                    android:textSize="12sp" />
-            </LinearLayout>
+                android:gravity="center"
+                android:text="회원가입(2/2)"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="normal" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:orientation="vertical">
+                android:background="#F6F6F6"
+                android:orientation="vertical"
+                android:padding="10dp">
 
-                <EditText
-                    android:id="@+id/registerName"
-                    android:layout_width="300dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profileImageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/person2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/addProfileButton2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="88dp"
+                        android:background="@android:drawable/ic_menu_add"
+                        app:layout_constraintEnd_toEndOf="@+id/profileImageView"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="@+id/profileImageView"
+                        app:layout_constraintTop_toTopOf="@+id/profileImageView"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
-                    android:ems="10"
-                    android:hint="이름"
-                    android:inputType="textPersonName"
-                    android:minHeight="48dp" />
+                    android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/registerPw"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:ems="10"
-                    android:hint="비밀번호"
-                    android:inputType="textPersonName"
-                    android:minHeight="48dp" />
+                    <EditText
+                        android:id="@+id/registerId"
+                        android:layout_width="218dp"
+                        android:layout_height="48dp"
+                        android:layout_marginLeft="18dp"
+                        android:ems="10"
+                        android:hint="아이디"
+                        android:inputType="textPersonName"
+                        tools:ignore="TouchTargetSizeCheck" />
 
-                <EditText
-                    android:id="@+id/pwCheck"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:ems="10"
-                    android:hint="비밀번호 확인"
-                    android:inputType="textPersonName"
-                    android:minHeight="48dp" />
+                    <Button
+                        android:id="@+id/idCheckButton"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:background="#CABAAA"
+                        android:backgroundTint="#CABAAA"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="중복확인"
+                        android:textSize="12sp" />
+                </LinearLayout>
 
-                <Button
-                    android:id="@+id/nextButton2"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_marginTop="40dp"
-                    android:background="#573E8B28"
-                    android:backgroundTint="#573E8B28"
-                    android:text="다음"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    tools:ignore="TextContrastCheck,TextContrastCheck" />
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/registerName"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:ems="10"
+                        android:hint="이름"
+                        android:inputType="textPersonName"
+                        android:minHeight="48dp" />
+
+                    <EditText
+                        android:id="@+id/registerPw"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:ems="10"
+                        android:hint="비밀번호"
+                        android:inputType="textPersonName"
+                        android:minHeight="48dp" />
+
+                    <EditText
+                        android:id="@+id/pwCheck"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:ems="10"
+                        android:hint="비밀번호 확인"
+                        android:inputType="textPersonName"
+                        android:minHeight="48dp" />
+
+                    <EditText
+                        android:id="@+id/petExperienceInput"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:ems="10"
+                        android:hint="강아지 반려사항"
+                        android:inputType="textPersonName"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <EditText
+                        android:id="@+id/petEducationInput"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:ems="10"
+                        android:hint="강아지 돌봄경험"
+                        android:inputType="textPersonName"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="27dp"
+                            android:layout_marginTop="10dp"
+                            android:text="위치 : "
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/locationOutput"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="21dp"
+                            android:text="TextView"
+                            android:textSize="16sp" />
+
+                        <Button
+                            android:id="@+id/locationButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="100dp"
+                            android:layout_marginTop="20dp"
+                            android:background="#CABAAA"
+                            android:backgroundTint="#CABAAA"
+                            android:text="위치가져오기"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/nextButton2"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:background="#573E8B28"
+                        android:backgroundTint="#573E8B28"
+                        android:text="회원가입하기"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="TextContrastCheck,TextContrastCheck" />
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>
-
-    </LinearLayout>
+    </HorizontalScrollView>
 
 </FrameLayout>

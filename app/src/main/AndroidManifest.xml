@@ -22,16 +22,8 @@
         tools:targetApi="31">
 
         <activity
-            android:name=".SplashActivity"
-            android:exported="true"
-            android:theme="@style/Theme.HT">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-
-            </intent-filter>
-        </activity>
+            android:name=".LocalActivity"
+            android:exported="false" />
 
         <activity
             android:name=".MainActivity"
@@ -42,12 +34,14 @@
             </intent-filter>
         </activity>
 
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyB5-rWKl00ZuoPldNqFcL0RlEd_WWGMiYg" />
 
-
+        <activity android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Splash">
+        </activity>
 
     </application>
 </manifest>
