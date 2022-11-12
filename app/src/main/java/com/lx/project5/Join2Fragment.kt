@@ -1,6 +1,7 @@
 package com.lx.project5
 
 import android.app.AlertDialog
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Bitmap
@@ -15,11 +16,19 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.lx.api.BasicClient
 import com.lx.data.CareListResponse
+import com.lx.data.FileUploadResponse
 import com.lx.project5.databinding.FragmentJoin2Binding
+import com.permissionx.guolindev.PermissionX
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-
+import java.io.File
+import java.text.SimpleDateFormat
+import java.util.*
+//사진이너무큼
 class Join2Fragment : Fragment() {
     var _binding: FragmentJoin2Binding? = null
     val binding get() = _binding!!
@@ -28,9 +37,12 @@ class Join2Fragment : Fragment() {
     var saveBitmap: Bitmap? = null
     var careImage: String? = "1"
 
+    val dateFormat1 = SimpleDateFormat("yyyyMMddHHmmss")
+    val dateFormat2 = SimpleDateFormat("yyyy-MM-dd HH:mm")
+
     //앨범에서 가져오기위한 런처
     val albumLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-        toast("앨범에서 돌아옴")
+
 
         when(it.resultCode) {
             AppCompatActivity.RESULT_OK -> {
@@ -47,13 +59,39 @@ class Join2Fragment : Fragment() {
                 }
             }
             AppCompatActivity.RESULT_CANCELED -> {
-                toast("앨범 선택 취소")
+
             }
         }
     }
 
+    val captureLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+
+
+        when(it.resultCode) {
+            AppCompatActivity.RESULT_OK -> {
+                bitmap = it.data?.extras?.get("data") as Bitmap
+                saveBitmap = bitmap
+                binding.profileImageView.setImageBitmap(bitmap)
+                val saveCapture = activity as MainActivity
+                saveCapture.saveFile(bitmap!!)
+            }
+            AppCompatActivity.RESULT_CANCELED -> {
+
+            }
+        }
+
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentJoin2Binding.inflate(inflater, container, false)
+        PermissionX.init(this).permissions(android.Manifest.permission.CAMERA)
+            .request{ allGranted, grantedList, deniedList ->
+                if(allGranted){
+
+                }else{
+
+                }
+            }
         initView()
 
         binding.nextButton2.setOnClickListener {
@@ -76,6 +114,8 @@ class Join2Fragment : Fragment() {
         return binding.root
     }
 
+
+
     //뷰 초기화
     fun initView() {
         //앨범에서 가져오기 버튼 눌렀을 때
@@ -84,6 +124,11 @@ class Join2Fragment : Fragment() {
             albumIntent.type = "image/*"
             albumLauncher.launch(albumIntent)
         }
+//        //사진찍기버튼
+//        binding.button11.setOnClickListener {
+//            val captureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+//            captureLauncher.launch(captureIntent)
+//        }
 
     }
 
@@ -99,7 +144,7 @@ class Join2Fragment : Fragment() {
             builder.setTitle("회원가입")
             builder.setMessage("비밀번호를 다시 입력해주세요.")
             builder.setPositiveButton("확인") { dialogInterface: DialogInterface, i: Int ->
-                toast("Positive")
+
             }
             builder.show()
         }
@@ -121,7 +166,7 @@ class Join2Fragment : Fragment() {
                     builder.setTitle("중복체크")
                     builder.setMessage("이미 있는 아이디입니다.")
                     builder.setPositiveButton("확인") { dialogInterface: DialogInterface, i: Int ->
-                        toast("Positive")
+
                     }
                     builder.show()
                     binding.registerId.setText("")
@@ -131,7 +176,7 @@ class Join2Fragment : Fragment() {
                     builder.setTitle("중복체크")
                     builder.setMessage("사용 가능한 아이디입니다.")
                     builder.setPositiveButton("확인") { dialogInterface: DialogInterface, i: Int ->
-                        toast("Positive")
+
                     }
                     builder.show()
                 }
@@ -180,8 +225,6 @@ class Join2Fragment : Fragment() {
         })
     }
 
-    fun toast(message: String) {
-        Toast.makeText(activity, message, Toast.LENGTH_LONG).show()
-    }
+
 
 }

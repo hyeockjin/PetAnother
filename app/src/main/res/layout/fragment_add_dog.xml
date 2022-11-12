@@ -49,6 +49,19 @@
                         android:layout_gravity="center_horizontal"
                         android:orientation="horizontal">
 
+                        <Button
+                            android:id="@+id/addProfileButton1"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="88dp"
+                            android:layout_weight="1"
+                            android:background="@android:drawable/ic_menu_add"
+                            app:layout_constraintEnd_toEndOf="@+id/profileImageView"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="@+id/profileImageView"
+                            app:layout_constraintTop_toTopOf="@+id/profileImageView"
+                            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
                         <ImageView
                             android:id="@+id/imageView4"
                             android:layout_width="220dp"
