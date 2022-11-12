@@ -14,6 +14,18 @@ class CareInfoFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentCareInfoBinding.inflate(inflater, container, false)
 
+        binding.button5.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwrite)
+
+        }
+
+        binding.imageButton3.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEM1)
+
+        }
+
+
+
         return binding.root
     }
 

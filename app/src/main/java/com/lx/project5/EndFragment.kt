@@ -15,6 +15,11 @@ class EndFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentEndBinding.inflate(inflater, container, false)
 
+        binding.endButton.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEM1)
+
+        }
+
         return binding.root
     }
 
