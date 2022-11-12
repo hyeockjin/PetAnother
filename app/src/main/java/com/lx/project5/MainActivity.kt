@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
         ITEMjoin1,
         ITEMjoin2,
         ITEMlogin,
+        ITEMupdate,
         ITEMpay,
         ITEMreservation,
         ITEMwrite,
@@ -90,9 +91,9 @@ class MainActivity : AppCompatActivity() {
                     onFragmentChanged(ScreenItem.ITEM3)
                 }
                 R.id.tab4 -> {
-                    if(AppData.loginData?.memberId == null){
+                    if(AppData.loginData?.careId == null){
                         onFragmentChanged(ScreenItem.ITEMlogin)
-                    }else if (AppData.loginData?.memberId != null){
+                    }else if (AppData.loginData?.careId != null){
                         onFragmentChanged(ScreenItem.ITEMmyPage)
                     }
 
@@ -193,6 +194,9 @@ class MainActivity : AppCompatActivity() {
             }
             ScreenItem.ITEMlogin -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, LoginFragment()).commit()
+            }
+            ScreenItem.ITEMupdate -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, CareInfoFragment()).commit()
             }
             ScreenItem.ITEMpay -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, LoginFragment()).commit()

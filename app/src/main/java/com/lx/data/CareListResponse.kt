@@ -26,6 +26,8 @@ data class CareListResponse(
         val careExperience: Int,
         @SerializedName("careId")
         val careId: String,
+        @SerializedName("careName")
+        val careName: String,
         @SerializedName("careImage")
         val careImage: String,
         @SerializedName("careN")

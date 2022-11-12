@@ -1,10 +1,10 @@
 package com.lx.project5
 
 class LoginData {
-    var memberId:String? = null
-    var memberPw:String? = null
-    var memberName:String? = null
-    var memberAddress:String? = null
-    var memberImage:String? = null
+    var careId:String? = null
+    var carePw:String? = null
+    var careName:String? = null
+    var careAddress:String? = null
+    var careImage:String? = null
 
 }

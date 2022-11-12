@@ -57,7 +57,6 @@ class Join2Fragment : Fragment() {
         initView()
 
         binding.nextButton2.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
             checkPw()
         }
 
@@ -68,6 +67,10 @@ class Join2Fragment : Fragment() {
         binding.locationButton.setOnClickListener {
             val locationIntent= Intent(activity,LocalActivity::class.java)
             startActivity(locationIntent)
+        }
+
+        binding.imageButton4.setOnClickListener{
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMjoin1)
         }
 
         return binding.root

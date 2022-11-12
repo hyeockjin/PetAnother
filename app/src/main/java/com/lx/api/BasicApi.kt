@@ -36,9 +36,9 @@ interface BasicApi {
     @POST("care/careLogin")
     fun postCareLogin(
         @Field("requestCode") requestCode: String,
-        @Field("careId") memberId: String,
-        @Field("carePw") memberPw: String
-    ): Call<MemberListResponse>
+        @Field("careId") careId: String,
+        @Field("carePw") carePw: String
+    ): Call<CareListResponse>
 
     /**
      * POST 방식으로 멤버 회원가입 요청 / 사용가능
@@ -64,12 +64,12 @@ interface BasicApi {
      */
 
     @FormUrlEncoded
-    @POST("care/memberFindPw")
-    fun postMemberFindPw(
+    @POST("care/postCareFindPw")
+    fun postCareFindPw(
         @Field("requestCode") requestCode: String,
         @Field("memberMobile") memberMobile: String,
         @Field("memberName") memberName: String
-    ): Call<MemberListResponse>
+    ): Call<CareListResponse>
 
     /**
      * POST 방식으로 아이디 중복체크 요청
@@ -80,6 +80,20 @@ interface BasicApi {
     fun postCareCheckId(
         @Field("requestCode") requestCode: String,
         @Field("careId") careId: String
+    ): Call<CareListResponse>
+
+    /**
+     * POST 방식으로 돌보미 정보수정 요청
+     */
+
+    @FormUrlEncoded
+    @POST("care/careUpdate")
+    fun postCareUpdate(
+        @Field("requestCode") requestCode: String,
+        @Field("careId") careId: String,
+        @Field("carePw") carePw: String,
+        @Field("careName") careName: String,
+        @Field("careImage") careImage: String
     ): Call<CareListResponse>
 
     /**
@@ -131,7 +145,7 @@ class BasicClient {
         private const val PROTOCOL = "http"
 
         // 기본 URL
-        private const val BASE_URL = "http://172.168.10.15:8001/"
+        private const val BASE_URL = "http://172.30.1.28:8001/"
 
         // 헤더 속성
         private const val CLIENT_ID = ""

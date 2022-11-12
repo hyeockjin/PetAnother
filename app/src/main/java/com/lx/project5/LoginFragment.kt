@@ -7,12 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
 import com.lx.api.BasicClient
-import com.lx.data.MemberListResponse
+import com.lx.data.CareListResponse
 import com.lx.project5.databinding.FragmentLoginBinding
-import com.lx.project5.databinding.FragmentMyPageBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,38 +28,38 @@ class LoginFragment : Fragment() {
         }
 
         binding.loginButton.setOnClickListener {
-            AppData.loginData?.memberId = binding.loginId.text.toString()
-            AppData.loginData?.memberPw = binding.loginPassword.text.toString()
+            AppData.loginData?.careId = binding.loginId.text.toString()
+            AppData.loginData?.carePw = binding.loginPassword.text.toString()
 
-
-            readMember()
+            readCare()
         }
 
         return binding.root
     }
 
-    fun readMember() {
-        val memberId = binding.loginId.text.toString()
-        val memberPw = binding.loginPassword.text.toString()
+    fun readCare() {
+        val careId = binding.loginId.text.toString()
+        val carePw = binding.loginPassword.text.toString()
 
-        BasicClient.api.postMemberLogin(
+        BasicClient.api.postCareLogin(
             requestCode = "1001",
-            memberId = memberId,
-            memberPw = memberPw
-        ).enqueue(object : Callback<MemberListResponse> {
-            override fun onResponse(call: Call<MemberListResponse>, response: Response<MemberListResponse>) {
-                val checkMember = response.body()?.header?.total.toString()
-                println(checkMember)
+            careId = careId,
+            carePw = carePw
+        ).enqueue(object : Callback<CareListResponse> {
+            override fun onResponse(call: Call<CareListResponse>, response: Response<CareListResponse>) {
+                val checkCare = response.body()?.header?.total.toString()
+                println(checkCare)
 
-
-                if(checkMember == "1"){
-                    AppData.loginData?.memberId = memberId
-                    AppData.loginData?.memberPw = memberPw
-                    AppData.loginData?.memberName = response.body()?.data?.get(0)?.memberName.toString()
-                    AppData.loginData?.memberAddress = response.body()?.data?.get(0)?.memberAddress.toString()
-                    AppData.loginData?.memberImage = response.body()?.data?.get(0)?.memberImage.toString()
+                if(checkCare == "1"){
+                    AppData.userdata="${response.body()?.data.toString()}"
+                    (activity as MainActivity).showToast("로그인 성공")
+                    AppData.loginData?.careId = careId
+                    AppData.loginData?.carePw = carePw
+                    AppData.loginData?.careName = response.body()?.data?.get(0)?.careName.toString()
+                    AppData.loginData?.careAddress = response.body()?.data?.get(0)?.careAddress.toString()
+                    AppData.loginData?.careImage = response.body()?.data?.get(0)?.careImage.toString()
                     (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
-                } else if(checkMember == "0"){
+                } else if(checkCare == "0"){
                     val builder = AlertDialog.Builder(activity)
                     builder.setTitle("로그인")
                     builder.setMessage("아이디/비밀번호를 다시 입력해주세요.")
@@ -75,7 +73,7 @@ class LoginFragment : Fragment() {
 
 
             }
-            override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
+            override fun onFailure(call: Call<CareListResponse>, t: Throwable) {
 
             }
 
@@ -88,4 +86,6 @@ class LoginFragment : Fragment() {
     }
 
     }
+
+
 
