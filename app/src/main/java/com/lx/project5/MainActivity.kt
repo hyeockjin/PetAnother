@@ -59,7 +59,8 @@ class MainActivity : AppCompatActivity() {
         ITEMwrite,
         ITEMwriteList,
         ITEMaddDog,
-        ITEMend
+        ITEMend,
+        ITEMvideo
 
     }
 
@@ -83,7 +84,7 @@ class MainActivity : AppCompatActivity() {
                     onFragmentChanged(ScreenItem.ITEM1)
                 }
                 R.id.tab2 -> {
-                    onFragmentChanged(ScreenItem.ITEMcareMain)
+                    onFragmentChanged(ScreenItem.ITEMvideo)
                 }
                 R.id.tab3 -> {
                     onFragmentChanged(ScreenItem.ITEM3)
@@ -210,6 +211,9 @@ class MainActivity : AppCompatActivity() {
             }
             ScreenItem.ITEMend -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, EndFragment()).commit()
+            }
+            ScreenItem.ITEMvideo -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, VideoFragment()).commit()
             }
         }
 

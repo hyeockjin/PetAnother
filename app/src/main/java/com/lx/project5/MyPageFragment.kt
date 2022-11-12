@@ -18,6 +18,12 @@ class MyPageFragment : Fragment() {
         binding.goDogList.setOnClickListener {
 
         }
+        //교육수강신청
+        binding.button3.setOnClickListener{
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMvideo)
+        }
+
+
         return binding.root
     }
 
