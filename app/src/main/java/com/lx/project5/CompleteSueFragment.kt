@@ -5,20 +5,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.lx.project5.databinding.*
+import com.lx.project5.databinding.FragmentCompleteSueBinding
+import com.lx.project5.databinding.FragmentWriteBinding
 
-class ReservationFragment : Fragment() {
-    var _binding: FragmentReservationBinding? = null
+class CompleteSueFragment : Fragment() {
+    var _binding: FragmentCompleteSueBinding? = null
     val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = FragmentReservationBinding.inflate(inflater, container, false)
+        binding.homeButton.setOnClickListener {
 
-        binding.applyButton.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareMain)
         }
 
         return binding.root
     }
+
+
 
 }

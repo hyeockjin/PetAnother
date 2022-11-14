@@ -90,8 +90,8 @@ interface BasicApi {
     @POST("care/careUpdate")
     fun postCareUpdate(
         @Field("requestCode") requestCode: String,
-        @Field("careId") careId: String,
-        @Field("carePw") carePw: String,
+        @Field("careAddress") careAddress: String,
+        @Field("careNo") careNo: String,
         @Field("careName") careName: String,
         @Field("careImage") careImage: String
     ): Call<CareListResponse>
@@ -145,7 +145,7 @@ class BasicClient {
         private const val PROTOCOL = "http"
 
         // 기본 URL
-        private const val BASE_URL = "http://172.30.1.28:8001/"
+        private const val BASE_URL = "http://192.168.0.215:8001/"
 
         // 헤더 속성
         private const val CLIENT_ID = ""

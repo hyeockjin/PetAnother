@@ -6,5 +6,6 @@ class LoginData {
     var careName:String? = null
     var careAddress:String? = null
     var careImage:String? = null
+    var careNo:String? = null
 
 }

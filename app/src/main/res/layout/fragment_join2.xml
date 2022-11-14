@@ -209,7 +209,7 @@
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/nextButton2"
+                        android:id="@+id/nextButton7"
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"

@@ -21,7 +21,7 @@ class CareMainFragment : Fragment() {
         }
 
         binding.Button5.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMaddDog)
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdogInfo)
 
         }
 

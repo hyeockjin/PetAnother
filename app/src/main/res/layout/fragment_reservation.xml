@@ -42,7 +42,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="즐거운 동행 예약 완료!"
+                        android:text="즐거운 동행 신청이 접수되었습니다!"
                         android:textSize="17sp" />
 
                     <TextView
@@ -70,7 +70,7 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/rDay3"
+                        android:id="@+id/titleOutput"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="53dp"
@@ -93,7 +93,7 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/rTime3"
+                        android:id="@+id/sueDayOutput"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="53dp"
@@ -130,22 +130,22 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/applyButton"
+                        android:id="@+id/homeButton"
                         android:layout_width="103dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="60dp"
                         android:layout_marginTop="70dp"
                         android:backgroundTint="#573E8B28"
-                        android:text="신청하기" />
+                        android:text="돌봄수락" />
 
                     <Button
-                        android:id="@+id/cancelButton"
+                        android:id="@+id/backButton5"
                         android:layout_width="103dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="40dp"
                         android:layout_marginTop="70dp"
                         android:backgroundTint="#573E8B28"
-                        android:text="예약취소" />
+                        android:text="돌아가기" />
                 </LinearLayout>
             </LinearLayout>
 

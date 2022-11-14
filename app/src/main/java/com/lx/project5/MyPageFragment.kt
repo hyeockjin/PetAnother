@@ -1,11 +1,13 @@
 package com.lx.project5
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.lx.api.BasicClient
 import com.lx.data.CareListResponse
 import com.lx.data.MemberListResponse
@@ -21,6 +23,7 @@ class MyPageFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentMyPageBinding.inflate(inflater, container, false)
+        initView()
 
         binding.button2.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMupdate)
@@ -32,6 +35,18 @@ class MyPageFragment : Fragment() {
 
 
         return binding.root
+    }
+
+    fun initView(){
+        AppData.loginData?.apply{
+            this.careImage?.let{
+                val uri = Uri.parse("http://192.168.0.7:8001${careImage}")
+                Glide.with(binding.imageView2).load(uri).into(binding.imageView2)
+            }
+            binding.textView7.text = AppData.loginData?.careName
+            binding.textView8.text = AppData.loginData?.careId
+            binding.textView9.text = AppData.loginData?.careAddress
+        }
     }
 
 

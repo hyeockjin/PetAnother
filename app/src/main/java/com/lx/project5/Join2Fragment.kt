@@ -94,7 +94,7 @@ class Join2Fragment : Fragment() {
             }
         initView()
 
-        binding.nextButton2.setOnClickListener {
+        binding.nextButton7.setOnClickListener {
             checkPw()
         }
 

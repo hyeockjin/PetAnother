@@ -161,7 +161,8 @@
                         android:layout_marginLeft="120dp"
                         android:background="#573E8B28"
                         android:backgroundTint="#573E8B28"
-                        android:text="미완료" />
+                        android:text="미완료"
+                        android:textColor="#606060" />
 
                 </LinearLayout>
 
@@ -195,7 +196,8 @@
                         android:layout_marginLeft="120dp"
                         android:background="#573E8B28"
                         android:backgroundTint="#573E8B28"
-                        android:text="미완료" />
+                        android:text="미완료"
+                        android:textColor="#6A6A6A" />
 
                 </LinearLayout>
 
@@ -212,6 +214,7 @@
                 android:id="@+id/textView31"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:text="맡김이와 채팅 후, 확인요청부탁드립니다." />
 

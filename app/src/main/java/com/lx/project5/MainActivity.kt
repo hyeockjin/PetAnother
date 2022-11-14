@@ -1,8 +1,6 @@
 package com.lx.project5
 
 import android.Manifest
-import android.Manifest.permission.ACCESS_COARSE_LOCATION
-import android.Manifest.permission.ACCESS_FINE_LOCATION
 import android.content.Context
 import android.graphics.Bitmap
 import android.location.Location
@@ -10,9 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
 import android.view.View
-import android.widget.TextView
 import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -59,7 +55,8 @@ class MainActivity : AppCompatActivity() {
         ITEMreservation,
         ITEMwrite,
         ITEMwriteList,
-        ITEMaddDog,
+        ITEMdogInfo,
+        ITEMmemInfo,
         ITEMend,
         ITEMvideo
 
@@ -210,8 +207,11 @@ class MainActivity : AppCompatActivity() {
             ScreenItem.ITEMwriteList -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, WriteListFragment()).commit()
             }
-            ScreenItem.ITEMaddDog -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, AddDogFragment()).commit()
+            ScreenItem.ITEMdogInfo -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, DogInfoFragment()).commit()
+            }
+            ScreenItem.ITEMmemInfo -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, MemberInfoFragment()).commit()
             }
             ScreenItem.ITEMend -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, EndFragment()).commit()

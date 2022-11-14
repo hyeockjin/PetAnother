@@ -15,7 +15,17 @@ class CareInfoFragment : Fragment() {
         _binding = FragmentCareInfoBinding.inflate(inflater, container, false)
 
         binding.button5.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwrite)
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareTodolist)
+
+        }
+
+        binding.button6.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmemInfo)
+
+        }
+
+        binding.button8.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdogInfo)
 
         }
 

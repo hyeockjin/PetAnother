@@ -214,7 +214,7 @@
                 android:layout_weight="1"
                 android:background="#573E8B28"
                 android:backgroundTint="#573E8B28"
-                android:text="특이사항" />
+                android:text="강아지정보" />
 
             <Button
                 android:id="@+id/locationButton2"
