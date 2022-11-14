@@ -7,6 +7,7 @@ import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.google.android.gms.location.*
@@ -15,12 +16,15 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.lx.api.BasicClient
+import com.lx.data.CareListResponse
 import com.lx.data.FileUploadResponse
+import com.lx.data.MemberRequestResponse
 import com.lx.project5.databinding.ActivityMainBinding
 import com.permissionx.guolindev.PermissionX
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
+import org.json.JSONArray
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -124,16 +128,16 @@ class MainActivity : AppCompatActivity() {
             // 내 위치 요청하기
             requestLocation()
 
-            // 마커 클릭 시 처리
-            map.setOnMarkerClickListener {
-                // showToast("마커 클릭됨 : ${it.tag}, ${it.title}")
-
-                // 필요시 다른 화면으로 이동 (tag 정보를 이용해서 구분함)
-                binding.cardView.visibility = View.VISIBLE
-
-
-                true
-            }
+//            // 마커 클릭 시 처리
+//            map.setOnMarkerClickListener {
+//                // showToast("마커 클릭됨 : ${it.tag}, ${it.title}")
+//
+//                // 필요시 다른 화면으로 이동 (tag 정보를 이용해서 구분함)
+//                binding.cardView.visibility = View.VISIBLE
+//
+//
+//                true
+//            }
 
             // 지도 클릭 시 처리
             map.setOnMapClickListener {
@@ -150,6 +154,9 @@ class MainActivity : AppCompatActivity() {
                 val zoomLevel = map.cameraPosition.zoom
                 println("zoomLevel : ${zoomLevel}")
             }
+
+            //마커
+            showNearLocationMarker(map)
 
         }
 
@@ -221,8 +228,56 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
     }
+
+    fun showNearLocationMarker(map: GoogleMap) {
+        BasicClient.api.getMemberRequestList(
+            requestCode = "1001"
+        ).enqueue(object : Callback<MemberRequestResponse> {
+            override fun onResponse(call: Call<MemberRequestResponse>, response: Response<MemberRequestResponse>) {
+                Log.v("lastkingdom","근처 마커 활성화 요청 성공")
+                val jsonArray = JSONArray(response.body()?.data)
+                for (i in 0 until jsonArray.length()) {
+                    Log.v("lastkingdom","근처 마커 for문 진입")
+                    var latitude = response.body()?.data?.get(i)?.writeX
+                    var longitude = response.body()?.data?.get(i)?.writeY
+
+                    Log.v("lastkingdom","마커 위도 ${latitude.toString()}")
+                    Log.v("lastkingdom","마커 위도 ${longitude.toString()}")
+
+                    Log.v("lastkingdom","2")
+                    // 1. 마커 옵션 설정 (만드는 과정)
+                    var makerOptions = MarkerOptions()
+                    makerOptions // LatLng에 대한 어레이를 만들어서 이용할 수도 있다.
+                        .position(LatLng(latitude!!, longitude!!))
+                        .title(response.body()?.data?.get(i)?.awrn.toString()) // 타이틀.
+
+                    // 2. 마커 생성 (마커를 나타냄)
+                    map.addMarker(makerOptions)
+
+                    // 마커클릭
+                    map.setOnMarkerClickListener {
+
+                        binding.className.text = response.body()?.data?.get(i)?.memberName.toString()
+                        binding.classAddress.text = response.body()?.data?.get(i)?.memberAddress.toString()
+                        binding.classSelf.text = response.body()?.data?.get(i)?.assignTitle.toString()
+                        //WriteSaveData.savecareNo = response.body()?.data?.get(i)?.careNo.toString()
+                        binding.cardView.visibility = View.VISIBLE
+
+                        true
+                    }
+                }
+            }
+            override fun onFailure(call: Call<MemberRequestResponse>, t: Throwable) {
+                Log.v("lastkingdom","근처 마커 활성화 요청 실패")
+            }
+        })
+    }
+
+
+
+
+
     fun requestLocation() {
 
         try {

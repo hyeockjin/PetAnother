@@ -5,6 +5,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable
 import com.lx.data.CareListResponse
 import com.lx.data.FileUploadResponse
 import com.lx.data.MemberListResponse
+import com.lx.data.MemberRequestResponse
 import okhttp3.Interceptor
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
@@ -39,6 +40,11 @@ interface BasicApi {
         @Field("careId") careId: String,
         @Field("carePw") carePw: String
     ): Call<CareListResponse>
+
+    @GET("/care/memberListTest")
+    fun getMemberRequestList(
+        @Query("requestCode") requestCode: String
+    ): Call<MemberRequestResponse>
 
     /**
      * POST 방식으로 멤버 회원가입 요청 / 사용가능
