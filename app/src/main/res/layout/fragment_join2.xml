@@ -61,8 +61,8 @@
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/profileImageView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
                         android:src="@drawable/person2"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -150,6 +150,18 @@
                         android:minHeight="48dp" />
 
                     <EditText
+                        android:id="@+id/addressInput"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:ems="10"
+                        android:hint="주소"
+                        android:inputType="textPersonName"
+                        android:textSize="18sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <EditText
                         android:id="@+id/petExperienceInput"
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
@@ -170,6 +182,7 @@
                         android:hint="강아지 돌봄경험"
                         android:inputType="textPersonName"
                         tools:ignore="TouchTargetSizeCheck" />
+
 
                     <LinearLayout
                         android:layout_width="wrap_content"

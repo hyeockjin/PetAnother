@@ -17,6 +17,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.lx.api.BasicClient
 import com.lx.data.CareListResponse
 import com.lx.data.FileUploadResponse
+import com.lx.project5.AppData.Companion.filepath
+import com.lx.project5.WriteSaveData.Companion.savelat
+import com.lx.project5.WriteSaveData.Companion.savelng
 import com.lx.project5.databinding.FragmentJoin2Binding
 import com.permissionx.guolindev.PermissionX
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -84,15 +87,9 @@ class Join2Fragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentJoin2Binding.inflate(inflater, container, false)
-        PermissionX.init(this).permissions(android.Manifest.permission.CAMERA)
-            .request{ allGranted, grantedList, deniedList ->
-                if(allGranted){
-
-                }else{
-
-                }
-            }
+        filepath = "1"
         initView()
+        writeShow()
 
         binding.nextButton7.setOnClickListener {
             checkPw()
@@ -110,6 +107,15 @@ class Join2Fragment : Fragment() {
         binding.imageButton4.setOnClickListener{
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMjoin1)
         }
+
+        PermissionX.init(this).permissions(android.Manifest.permission.CAMERA)
+            .request{ allGranted, grantedList, deniedList ->
+                if(allGranted){
+
+                }else{
+
+                }
+            }
 
         return binding.root
     }
@@ -189,16 +195,22 @@ class Join2Fragment : Fragment() {
         })
     }
 
+    fun writeShow() {
+        binding.locationOutput.text = "${WriteSaveData.savelat.toString()}, ${WriteSaveData.savelng.toString()}"
+    }
+
+
     //돌보미리스트 추가 [파라미터]
     fun postCareAdd(){
 
         var registerId = binding.registerId.text.toString()
         var registerName = binding.registerName.text.toString()
         var registerPw = binding.registerPw.text.toString()
+        var registerAddress = binding.addressInput.text.toString()
         var registerExperience = binding.petExperienceInput.text.toString()
         var registerEducation = binding.petEducationInput.text.toString()
-        val lat = AppData.lat?.toDouble()
-        val lng = AppData.lng?.toDouble()
+        val lat = WriteSaveData.savelat.toString()
+        val lng = WriteSaveData.savelng.toString()
 
 
         BasicClient.api.postCareAdd(
@@ -208,8 +220,9 @@ class Join2Fragment : Fragment() {
             careName = registerName,
             careExperience = registerExperience,
             careEducation = registerEducation,
-            careImage = careImage!!,
+            careImage = filepath!!,
             careApproval = "1",
+            careAddress = registerAddress,
             lat = lat!!,
             lng = lng!!
 

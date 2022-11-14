@@ -16,10 +16,10 @@ data class CareListResponse(
 
 
     data class Data(
-        @SerializedName("careAddress")
-        val careAddress: String,
         @SerializedName("careApproval")
         val careApproval: Int,
+        @SerializedName("careAddress")
+        val careAddress: Int,
         @SerializedName("careEducation")
         val careEducation: Int,
         @SerializedName("careExperience")

@@ -52,11 +52,12 @@ interface BasicApi {
         @Field("careName") careName: String,
         @Field("carePw") carePw: String,
         @Field("careExperience") careExperience: String,
+        @Field("careAddress") careAddress: String,
         @Field("careEducation") careEducation: String,
         @Field("careImage") careImage: String,
         @Field("careApproval") careApproval: String,
-        @Field("lat") lat: Double,
-        @Field("lng") lng: Double
+        @Field("lat") lat: String,
+        @Field("lng") lng: String
     ): Call<CareListResponse>
 
     /**
@@ -100,7 +101,7 @@ interface BasicApi {
      * GET 방식으로 주변 펫시터 요청 / 사용가능
      */
 
-    @GET("care/memberDelete")
+    @GET("care/careDelete")
     fun getCareList(
         @Query("requestCode") requestCode: String,
         @Query("carex1") carex1: Int,

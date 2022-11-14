@@ -83,8 +83,8 @@ class LocalActivity : AppCompatActivity() {
 
         //상품등록으로 돌아가기 버튼
         binding.backButton.setOnClickListener {
-            AppData.lat = binding.outputLat.text.toString()
-            AppData.lng = binding.outputLng.text.toString()
+            WriteSaveData.savelat = binding.outputLat.text.toString()
+            WriteSaveData.savelng = binding.outputLng.text.toString()
             finish()
         }
     }
