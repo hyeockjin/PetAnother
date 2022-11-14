@@ -208,7 +208,6 @@ class Join2Fragment : Fragment() {
         var registerPw = binding.registerPw.text.toString()
         var registerAddress = binding.addressInput.text.toString()
         var registerExperience = binding.petExperienceInput.text.toString()
-        var registerEducation = binding.petEducationInput.text.toString()
         val lat = WriteSaveData.savelat.toString()
         val lng = WriteSaveData.savelng.toString()
 
@@ -219,7 +218,7 @@ class Join2Fragment : Fragment() {
             carePw = registerPw,
             careName = registerName,
             careExperience = registerExperience,
-            careEducation = registerEducation,
+            careEducation = "1",
             careImage = filepath!!,
             careApproval = "1",
             careAddress = registerAddress,

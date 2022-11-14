@@ -168,17 +168,6 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="10dp"
                         android:ems="10"
-                        android:hint="강아지 반려사항"
-                        android:inputType="textPersonName"
-                        tools:ignore="TouchTargetSizeCheck" />
-
-                    <EditText
-                        android:id="@+id/petEducationInput"
-                        android:layout_width="300dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="10dp"
-                        android:ems="10"
                         android:hint="강아지 돌봄경험"
                         android:inputType="textPersonName"
                         tools:ignore="TouchTargetSizeCheck" />
@@ -226,7 +215,7 @@
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginTop="20dp"
                         android:background="#573E8B28"
                         android:backgroundTint="#573E8B28"
                         android:text="회원가입하기"
