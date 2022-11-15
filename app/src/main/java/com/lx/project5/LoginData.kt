@@ -10,6 +10,8 @@ class LoginData {
     var careExperience:String? = null
     var careApproval:String? = null
     var careEducation:String? = null
+    var careX:String? = null
+    var careY:String? = null
 
 
 }

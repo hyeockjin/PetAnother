@@ -55,6 +55,8 @@ class LoginFragment : Fragment() {
                     AppData.loginData?.carePw = carePw
                     AppData.loginData?.careName = response.body()?.data?.get(0)?.careName.toString()
                     AppData.loginData?.careNo = response.body()?.data?.get(0)?.careNo.toString()
+                    AppData.loginData?.careX = response.body()?.data?.get(0)?.careX.toString()
+                    AppData.loginData?.careY = response.body()?.data?.get(0)?.careY.toString()
                     AppData.loginData?.careExperience = response.body()?.data?.get(0)?.careExperience.toString()
                     AppData.loginData?.careApproval = response.body()?.data?.get(0)?.careApproval.toString()
                     AppData.loginData?.careEducation = response.body()?.data?.get(0)?.careEducation.toString()
