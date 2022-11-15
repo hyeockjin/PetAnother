@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,31 +14,48 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_marginTop="20dp"
+            android:background="#faf7f4"
             android:gravity="center_horizontal|center_vertical"
             android:text="내가 쓴 맡김글"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textStyle="normal" />
 
-        <Button
-            android:id="@+id/button9"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_gravity="end"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/bold"
-            android:backgroundTint="#170101"
-            android:text="+ 작성하기"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/writeList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp" >
+
+        </androidx.recyclerview.widget.RecyclerView>
 
     </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addDogButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginRight="35dp"
+            android:layout_marginBottom="50dp"
+            android:clickable="true"
+            android:src="@drawable/pencil"
+            app:backgroundTint="#EF4E84" />
+    </FrameLayout>
+
+    <ImageButton
+        android:id="@+id/backButton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#faf7f4"
+        android:src="@drawable/arrow" />
 
 </FrameLayout>

@@ -5,7 +5,7 @@
     tools:targetApi="lollipop">
     <item>
         <shape android:shape="oval">
-            <solid android:color="#F4BFD0" />
+            <solid android:color="#C8DAC9" />
         </shape>
     </item>
 </ripple>

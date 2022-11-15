@@ -39,6 +39,30 @@
                 android:layout_height="match_parent"
                 tools:context=".MainActivity" />
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/writeButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="36dp"
+                android:clickable="true"
+                app:backgroundTint="#A6A8B1"
+                app:srcCompat="@drawable/gps2" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/writeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/writeButton2"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="21dp"
+                android:layout_marginEnd="34dp"
+                android:clickable="true"
+                app:backgroundTint="#3949AB"
+                app:srcCompat="@drawable/pencil" />
+
             <LinearLayout
                 android:id="@+id/cardView"
                 android:layout_width="match_parent"
