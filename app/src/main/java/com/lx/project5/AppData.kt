@@ -14,6 +14,7 @@ class AppData {
         var point: Int? = 0
         var lat: String? = null
         var lng: String? = null
+
     }
     //유진바보
 }

@@ -130,11 +130,6 @@ class Join2Fragment : Fragment() {
             albumIntent.type = "image/*"
             albumLauncher.launch(albumIntent)
         }
-//        //사진찍기버튼
-//        binding.button11.setOnClickListener {
-//            val captureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-//            captureLauncher.launch(captureIntent)
-//        }
 
     }
 

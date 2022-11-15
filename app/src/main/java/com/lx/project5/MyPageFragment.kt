@@ -28,6 +28,7 @@ class MyPageFragment : Fragment() {
         binding.button2.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMupdate)
         }
+
         //교육수강신청
         binding.button3.setOnClickListener{
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMvideo)
