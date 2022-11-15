@@ -62,8 +62,8 @@ interface BasicApi {
         @Field("careEducation") careEducation: String,
         @Field("careImage") careImage: String,
         @Field("careApproval") careApproval: String,
-        @Field("lat") lat: String,
-        @Field("lng") lng: String
+        @Field("careX") lat: String,
+        @Field("careY") lng: String
     ): Call<CareListResponse>
 
     /**
