@@ -62,8 +62,8 @@ interface BasicApi {
         @Field("careEducation") careEducation: String,
         @Field("careImage") careImage: String,
         @Field("careApproval") careApproval: String,
-        @Field("lat") lat: String,
-        @Field("lng") lng: String
+        @Field("careX") lat: String,
+        @Field("careY") lng: String
     ): Call<CareListResponse>
 
     /**
@@ -121,7 +121,7 @@ interface BasicApi {
      */
 
     @Multipart
-    @POST("/community/upload")
+    @POST("/care/upload")
     fun uploadFile(
         @Part file: MultipartBody.Part,
         @Part(value="params", encoding="UTF-8") params: HashMap<String,String> = hashMapOf()
