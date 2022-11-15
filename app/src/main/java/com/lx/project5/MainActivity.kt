@@ -200,7 +200,7 @@ class MainActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction().replace(R.id.container, LoginFragment()).commit()
             }
             ScreenItem.ITEMupdate -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, CareInfoFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.container, CareInfoUpdateFragment()).commit()
             }
             ScreenItem.ITEMpay -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, LoginFragment()).commit()
