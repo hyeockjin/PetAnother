@@ -26,7 +26,7 @@ class MemberInfoFragment : Fragment() {
     fun initView(){
         AppData.memberData?.apply{
             this.memberImage .let{
-                val uri = Uri.parse("http://192.168.0.215:8001${memberImage}")
+                val uri = Uri.parse("http://192.168.0.12:8001${memberImage}")
                 Glide.with(binding.memImageView).load(uri).into(binding.memImageView)
             }
             binding.memName.text = "${AppData.memberData?.memberName}"
