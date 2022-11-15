@@ -121,7 +121,7 @@ interface BasicApi {
      */
 
     @Multipart
-    @POST("/community/upload")
+    @POST("/care/upload")
     fun uploadFile(
         @Part file: MultipartBody.Part,
         @Part(value="params", encoding="UTF-8") params: HashMap<String,String> = hashMapOf()

@@ -87,7 +87,7 @@ class Join2Fragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentJoin2Binding.inflate(inflater, container, false)
-        filepath = "1"
+
         initView()
         writeShow()
 
@@ -219,7 +219,7 @@ class Join2Fragment : Fragment() {
             careName = registerName,
             careExperience = registerExperience,
             careEducation = "1",
-            careImage = filepath!!,
+            careImage = AppData.filepath!!,
             careApproval = "1",
             careAddress = registerAddress,
             lat = lat!!,
