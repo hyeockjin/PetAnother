@@ -7,5 +7,9 @@ class LoginData {
     var careAddress:String? = null
     var careImage:String? = null
     var careNo:String? = null
+    var careExperience:String? = null
+    var careApproval:String? = null
+    var careEducation:String? = null
+
 
 }

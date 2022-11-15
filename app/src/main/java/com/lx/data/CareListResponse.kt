@@ -16,36 +16,34 @@ data class CareListResponse(
 
 
     data class Data(
-        @SerializedName("careApproval")
-        val careApproval: Int,
-        @SerializedName("careAddress")
-        val careAddress: Int,
-        @SerializedName("careEducation")
-        val careEducation: Int,
-        @SerializedName("careExperience")
-        val careExperience: Int,
-        @SerializedName("careId")
+        @SerializedName("care_approval")
+        val careApproval: String,
+        @SerializedName("care_address")
+        val careAddress: String,
+        @SerializedName("care_education")
+        val careEducation: String,
+        @SerializedName("care_experience")
+        val careExperience: String,
+        @SerializedName("care_id")
         val careId: String,
-        @SerializedName("careName")
+        @SerializedName("care_name")
         val careName: String,
-        @SerializedName("careImage")
+        @SerializedName("care_image")
         val careImage: String,
         @SerializedName("careN")
         val careN: String,
-        @SerializedName("careNickname")
-        val careNickname: String,
-        @SerializedName("careNo")
-        val careNo: Int,
-        @SerializedName("carePw")
+        @SerializedName("care_no")
+        val careNo: String,
+        @SerializedName("care_pw")
         val carePw: String,
         @SerializedName("careX")
         val careX: Double,
         @SerializedName("careY")
         val careY: Double,
         @SerializedName("lat")
-        val lat: Double,
+        val lat: String,
         @SerializedName("lng")
-        val lng: Double
+        val lng: String
     )
     data class Header(
         @SerializedName("total")

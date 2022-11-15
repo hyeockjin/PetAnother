@@ -52,7 +52,7 @@
         android:layout_width="260dp"
         android:layout_height="35dp"
         android:layout_marginTop="12dp"
-        android:background="@drawable/bold2"
+        android:background="@drawable/pinkbutton"
         android:backgroundTint="#F8BBD0"
         android:text="로그인"
         app:layout_constraintEnd_toEndOf="parent"

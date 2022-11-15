@@ -50,10 +50,15 @@ class LoginFragment : Fragment() {
                 if(checkCare == "1"){
                     AppData.userdata="${response.body()?.data.toString()}"
                     (activity as MainActivity).showToast("로그인 성공")
+                    AppData.loginData = LoginData()
                     AppData.loginData?.careId = careId
                     AppData.loginData?.carePw = carePw
                     AppData.loginData?.careName = response.body()?.data?.get(0)?.careName.toString()
                     AppData.loginData?.careNo = response.body()?.data?.get(0)?.careNo.toString()
+                    AppData.loginData?.careExperience = response.body()?.data?.get(0)?.careExperience.toString()
+                    AppData.loginData?.careApproval = response.body()?.data?.get(0)?.careApproval.toString()
+                    AppData.loginData?.careEducation = response.body()?.data?.get(0)?.careEducation.toString()
+                    AppData.loginData?.careAddress = response.body()?.data?.get(0)?.careAddress.toString()
                     AppData.loginData?.careImage = response.body()?.data?.get(0)?.careImage.toString()
                     (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
                 } else if(checkCare == "0"){
@@ -72,7 +77,6 @@ class LoginFragment : Fragment() {
             }
             override fun onFailure(call: Call<CareListResponse>, t: Throwable) {
                 (activity as MainActivity).showToast("qkqh")
-                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
             }
 
         })

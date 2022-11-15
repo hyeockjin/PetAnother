@@ -196,7 +196,7 @@ class Join2Fragment : Fragment() {
     }
 
     fun writeShow() {
-        binding.locationOutput.text = "${WriteSaveData.savelat.toString()}, ${WriteSaveData.savelng.toString()}"
+        binding.locationOutput.text = "${savelat.toString()}, ${savelng.toString()}"
     }
 
 
@@ -208,8 +208,8 @@ class Join2Fragment : Fragment() {
         var registerPw = binding.registerPw.text.toString()
         var registerAddress = binding.addressInput.text.toString()
         var registerExperience = binding.petExperienceInput.text.toString()
-        val lat = WriteSaveData.savelat.toString()
-        val lng = WriteSaveData.savelng.toString()
+        val lat = savelat.toString()
+        val lng = savelng.toString()
 
 
         BasicClient.api.postCareAdd(
