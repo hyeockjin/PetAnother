@@ -13,41 +13,33 @@ data class CareListResponse(
     @SerializedName("message")
     val message: String
 ) {
-
-
     data class Data(
-        @SerializedName("care_approval")
-        val careApproval: String,
         @SerializedName("care_address")
         val careAddress: String,
+        @SerializedName("care_approval")
+        val careApproval: Int,
         @SerializedName("care_education")
-        val careEducation: String,
+        val careEducation: Int,
         @SerializedName("care_experience")
         val careExperience: String,
         @SerializedName("care_id")
         val careId: String,
-        @SerializedName("care_name")
-        val careName: String,
         @SerializedName("care_image")
         val careImage: String,
-        @SerializedName("careN")
-        val careN: String,
+        @SerializedName("care_name")
+        val careName: String,
         @SerializedName("care_no")
-        val careNo: String,
+        val careNo: Int,
         @SerializedName("care_pw")
         val carePw: String,
         @SerializedName("careX")
         val careX: Double,
         @SerializedName("careY")
-        val careY: Double,
-        @SerializedName("lat")
-        val lat: String,
-        @SerializedName("lng")
-        val lng: String
+        val careY: Double
     )
+
     data class Header(
         @SerializedName("total")
         val total: Int
     )
-
 }
