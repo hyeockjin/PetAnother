@@ -8,5 +8,6 @@ data class ChoiceRegisterData (
     var startTime: String,
     var endTime: String,
     var assignTitle: String,
-    var assignContent: String
+    var assignContent: String,
+    var memberName: String
 )

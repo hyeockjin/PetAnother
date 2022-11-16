@@ -37,11 +37,10 @@ class ChoiceRegisterAdapter : RecyclerView.Adapter<ChoiceRegisterAdapter.ViewHol
 //                val uri = Uri.parse("http://192.168.43.52:8001${this}")
 //                Glide.with(binding.gridPictureView).load(uri).into(binding.gridPictureView)
 //            }
-
-            binding.choiceMemberName
-            binding.choiceTitle
-            binding.choiceStart
-            binding.choiceEnd
+            binding.choiceMemberName.text= item.memberName.toString()
+            binding.choiceTitle.text = item.assignTitle.toString()
+            binding.choiceStart.text = item.startTime.toString()
+            binding.choiceEnd.text = item.endTime.toString()
 
         }
         init {

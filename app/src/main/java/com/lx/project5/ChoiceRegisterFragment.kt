@@ -94,7 +94,8 @@ class ChoiceRegisterFragment : Fragment() {
                         item.startTime,
                         item.endTime,
                         item.assignTitle,
-                        item.assignContent
+                        item.assignContent,
+                        item.memberName
                     )
                     )
                 }
