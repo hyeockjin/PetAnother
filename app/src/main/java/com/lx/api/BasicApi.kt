@@ -139,8 +139,8 @@ interface BasicApi {
     @GET("care/dogInfo")
     fun getDogInfo(
         @Query("requestCode") requestCode: String,
-        @Query("memberNo") memberNo: String,
-    ): Call<MemberListResponse>
+        @Query("dogNo") dogNo: String,
+    ): Call<DogListResponse>
 
 
 

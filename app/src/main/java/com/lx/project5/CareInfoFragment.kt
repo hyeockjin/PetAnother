@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.lx.api.BasicApi
 import com.lx.api.BasicClient
+import com.lx.data.DogListResponse
 import com.lx.data.MemberListResponse
 import com.lx.project5.databinding.FragmentCareInfoBinding
 import retrofit2.Call
@@ -51,6 +52,7 @@ class CareInfoFragment : Fragment() {
     fun initView(){
         if(AppData.goIndex == 2){
             val assignTime = "${AppData.choiceRegisterItem?.startTime} ~ ${AppData.choiceRegisterItem?.endTime}"
+            binding.outputTime.text = assignTime
 
 
             // 사람 정보 부터
@@ -78,6 +80,31 @@ class CareInfoFragment : Fragment() {
             // 그다음 개정보
             BasicClient.api.getDogInfo(
                 requestCode = "1001",
+                dogNo = AppData.choiceRegisterItem?.dogNo.toString()
+
+            ).enqueue(object : Callback<DogListResponse> {
+                override fun onResponse(call: Call<DogListResponse>, response: Response<DogListResponse>) {
+
+                    AppData.dogData?.dogNo = response.body()?.data?.get(0)?.dogNo.toString()
+                    AppData.dogData?.dogAge = response.body()?.data?.get(0)?.dogAge.toString()
+                    AppData.dogData?.dogImage = response.body()?.data?.get(0)?.dogImage.toString()
+                    AppData.dogData?.dogBreed = response.body()?.data?.get(0)?.dogBreed.toString()
+                    AppData.dogData?.dogCharacter = response.body()?.data?.get(0)?.dogCharacter.toString()
+                    AppData.dogData?.dogEducation = response.body()?.data?.get(0)?.dogEducation.toString()
+                    AppData.dogData?.dogGender = response.body()?.data?.get(0)?.dogGender.toString()
+                    binding.outputDogName.text = AppData.dogData?.dogName
+
+                    (activity as MainActivity).showToast("1")
+                }
+                override fun onFailure(call: Call<DogListResponse>, t: Throwable) {
+
+                    (activity as MainActivity).showToast("2")
+                }
+
+            })
+            // 사람 정보 부터
+            BasicClient.api.getMemberInfo(
+                requestCode = "1001",
                 memberNo = AppData.choiceRegisterItem?.memberNo.toString()
 
             ).enqueue(object : Callback<MemberListResponse> {
@@ -99,11 +126,6 @@ class CareInfoFragment : Fragment() {
             })
 
 
-
-            binding.nameOutput.text = AppData.choiceRegisterItem?.memberName
-
-
-            val acrn =  AppData.choiceRegisterItem?.acrn
 
         }else if (AppData.goIndex == 1){
 

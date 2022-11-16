@@ -11,6 +11,7 @@ class AppData {
         var loginData: LoginData?=null
         var selectedItem: PetData?=null
         var memberData: MemberData?=null
+        var dogData: PetData? = null
         var point: Int? = 0
         var lat: String? = null
         var lng: String? = null
