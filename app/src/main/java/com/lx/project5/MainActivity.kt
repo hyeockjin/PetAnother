@@ -19,9 +19,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.lx.api.BasicClient
-import com.lx.data.CareListResponse
-import com.lx.data.FileUploadResponse
-import com.lx.data.MemberRequestResponse
+import com.lx.data.*
 import com.lx.project5.databinding.ActivityMainBinding
 import com.permissionx.guolindev.PermissionX
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -284,6 +282,7 @@ class MainActivity : AppCompatActivity() {
                         binding.classAddress.text = response.body()?.data?.get(i)?.memberAddress.toString()
                         binding.classSelf.text = response.body()?.data?.get(i)?.assignTitle.toString()
                         AppData.writeRegisterItem?.awrn = response.body()?.data?.get(i)?.awrn!!
+                        infoView()
                         binding.cardView.visibility = View.VISIBLE
 
                         true
@@ -297,7 +296,60 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    fun infoView() {
+        if (AppData.goIndex == 1){
 
+
+            // 사람 정보 부터
+            BasicClient.api.getMemberInfo(
+                requestCode = "1001",
+                memberNo = AppData.writeRegisterItem?.memberNo.toString()
+
+            ).enqueue(object : Callback<MemberListResponse> {
+                override fun onResponse(call: Call<MemberListResponse>, response: Response<MemberListResponse>) {
+
+                    AppData.memberData?.memberAddress = response.body()?.data?.get(0)?.memberAddress
+                    AppData.memberData?.memberImage = response.body()?.data?.get(0)?.memberImage
+                    AppData.memberData?.memberName = response.body()?.data?.get(0)?.memberName
+                    AppData.memberData?.memberNo = response.body()?.data?.get(0)?.memberNo
+
+
+                    showToast("1")
+                }
+                override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
+
+                    showToast("2")
+                }
+
+            })
+            // 그다음 개정보
+            BasicClient.api.getDogInfo(
+                requestCode = "1001",
+                dogNo = AppData.writeRegisterItem?.dogNo.toString()
+
+            ).enqueue(object : Callback<DogListResponse> {
+                override fun onResponse(call: Call<DogListResponse>, response: Response<DogListResponse>) {
+
+                    AppData.dogData?.dogNo = response.body()?.data?.get(0)?.dogNo.toString()
+                    AppData.dogData?.dogAge = response.body()?.data?.get(0)?.dogAge.toString()
+                    AppData.dogData?.dogImage = response.body()?.data?.get(0)?.dogImage.toString()
+                    AppData.dogData?.dogBreed = response.body()?.data?.get(0)?.dogBreed.toString()
+                    AppData.dogData?.dogCharacter = response.body()?.data?.get(0)?.dogCharacter.toString()
+                    AppData.dogData?.dogEducation = response.body()?.data?.get(0)?.dogEducation.toString()
+                    AppData.dogData?.dogGender = response.body()?.data?.get(0)?.dogGender.toString()
+
+
+                    showToast("1")
+                }
+                override fun onFailure(call: Call<DogListResponse>, t: Throwable) {
+
+                    showToast("2")
+                }
+
+            })
+        }
+
+    }
 
 
     fun requestLocation() {
