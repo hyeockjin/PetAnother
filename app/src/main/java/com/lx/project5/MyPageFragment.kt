@@ -47,7 +47,7 @@ class MyPageFragment : Fragment() {
     fun initView(){
         AppData.loginData.apply{
             this?.careImage?.let{
-                val uri = Uri.parse("http://192.168.0.15:8001${careImage}")
+                val uri = Uri.parse("http://172.30.1.4:8001${careImage}")
                 Glide.with(binding.imageView12).load(uri).into(binding.imageView12)
             }
             binding.textView7.text = AppData.loginData?.careName

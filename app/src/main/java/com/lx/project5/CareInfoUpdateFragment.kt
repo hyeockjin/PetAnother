@@ -86,7 +86,7 @@ class CareInfoUpdateFragment : Fragment() {
     fun setView(){
         AppData?.apply{
             this.careImage?.let {
-                val uri = Uri.parse("http://192.168.0.15:8001${careImage}")
+                val uri = Uri.parse("http://172.30.1.4:8001${careImage}")
                 Glide.with(binding.inputImageView).load(uri).into(binding.inputImageView)
             }
             binding.updateName.setText(AppData.loginData?.careId)

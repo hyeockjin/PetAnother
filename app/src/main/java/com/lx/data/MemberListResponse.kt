@@ -24,7 +24,7 @@ data class MemberListResponse(
         val memberName: String,
         @SerializedName("member_pw")
         val memberPw: String,
-        @SerializedName("member_pw")
+        @SerializedName("member_no")
         val memberNo: String
     )
 
