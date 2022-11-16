@@ -89,7 +89,7 @@ class CareInfoUpdateFragment : Fragment() {
                 val uri = Uri.parse("http://172.30.1.4:8001${careImage}")
                 Glide.with(binding.inputImageView).load(uri).into(binding.inputImageView)
             }
-            binding.updateName.setText(AppData.loginData?.careId)
+            binding.updateName.setText(AppData.loginData?.careName)
             binding.updateAddress.setText(AppData.loginData?.careAddress)
 
         }
@@ -135,7 +135,7 @@ class CareInfoUpdateFragment : Fragment() {
 
             })
         }else {
-            (activity as MainActivity).showToast("비밀번호가 틀립니다.")
+            (activity as MainActivity).showToast("3")
 
         }
 

@@ -283,7 +283,7 @@ class MainActivity : AppCompatActivity() {
                         binding.className.text = response.body()?.data?.get(i)?.memberName.toString()
                         binding.classAddress.text = response.body()?.data?.get(i)?.memberAddress.toString()
                         binding.classSelf.text = response.body()?.data?.get(i)?.assignTitle.toString()
-                        //AppData.writeRegisterItem.mermreme = response.body()?.data?.get(i)?.awrn
+                        AppData.writeRegisterItem?.awrn = response.body()?.data?.get(i)?.awrn!!
                         binding.cardView.visibility = View.VISIBLE
 
                         true

@@ -102,10 +102,16 @@ class CareInfoFragment : Fragment() {
                 }
 
             })
+
+
+        }else if (AppData.goIndex == 1){
+            val assignTime = "${AppData.writeRegisterItem?.startTime} ~ ${AppData.writeRegisterItem?.endTime}"
+            binding.outputTime.text = assignTime
+
             // 사람 정보 부터
             BasicClient.api.getMemberInfo(
                 requestCode = "1001",
-                memberNo = AppData.choiceRegisterItem?.memberNo.toString()
+                memberNo = AppData.writeRegisterItem?.memberNo.toString()
 
             ).enqueue(object : Callback<MemberListResponse> {
                 override fun onResponse(call: Call<MemberListResponse>, response: Response<MemberListResponse>) {
@@ -124,11 +130,31 @@ class CareInfoFragment : Fragment() {
                 }
 
             })
+            // 그다음 개정보
+            BasicClient.api.getDogInfo(
+                requestCode = "1001",
+                dogNo = AppData.writeRegisterItem?.dogNo.toString()
 
+            ).enqueue(object : Callback<DogListResponse> {
+                override fun onResponse(call: Call<DogListResponse>, response: Response<DogListResponse>) {
 
+                    AppData.dogData?.dogNo = response.body()?.data?.get(0)?.dogNo.toString()
+                    AppData.dogData?.dogAge = response.body()?.data?.get(0)?.dogAge.toString()
+                    AppData.dogData?.dogImage = response.body()?.data?.get(0)?.dogImage.toString()
+                    AppData.dogData?.dogBreed = response.body()?.data?.get(0)?.dogBreed.toString()
+                    AppData.dogData?.dogCharacter = response.body()?.data?.get(0)?.dogCharacter.toString()
+                    AppData.dogData?.dogEducation = response.body()?.data?.get(0)?.dogEducation.toString()
+                    AppData.dogData?.dogGender = response.body()?.data?.get(0)?.dogGender.toString()
+                    binding.outputDogName.text = AppData.dogData?.dogName
 
-        }else if (AppData.goIndex == 1){
+                    (activity as MainActivity).showToast("1")
+                }
+                override fun onFailure(call: Call<DogListResponse>, t: Throwable) {
 
+                    (activity as MainActivity).showToast("2")
+                }
+
+            })
         }
 
 

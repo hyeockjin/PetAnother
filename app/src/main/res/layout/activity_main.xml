@@ -105,7 +105,7 @@
                                 android:layout_height="20dp"
                                 android:layout_marginLeft="16dp"
                                 android:layout_marginTop="5dp"
-                                android:text="닉네임 : "
+                                android:text="맡기미 : "
                                 android:textColor="#000000"
                                 android:textSize="14dp"
                                 android:textStyle="bold" />
@@ -123,6 +123,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
+                            android:layout_marginTop="10dp"
                             android:orientation="horizontal">
 
                             <TextView
@@ -130,7 +131,7 @@
                                 android:layout_height="20dp"
                                 android:layout_marginLeft="16dp"
                                 android:layout_marginTop="7dp"
-                                android:text="나이 :  "
+                                android:text="반려견 : "
                                 android:textColor="#000000"
                                 android:textSize="14dp"
                                 android:textStyle="bold" />
@@ -140,7 +141,7 @@
                                 android:layout_width="290dp"
                                 android:layout_height="20dp"
                                 android:layout_marginTop="7dp"
-                                android:text="20대후반"
+                                android:text="용현문"
                                 android:textColor="#000000"
                                 android:textSize="14dp" />
                         </LinearLayout>
@@ -148,6 +149,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
+                            android:layout_marginTop="10dp"
                             android:orientation="horizontal">
 
                             <TextView
@@ -170,60 +172,11 @@
                                 android:textSize="14dp" />
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="25dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="20dp"
-                                android:layout_marginLeft="16dp"
-                                android:layout_marginTop="7dp"
-                                android:text="별점 :       "
-                                android:textColor="#000000"
-                                android:textSize="14dp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/classScope"
-                                android:layout_width="290dp"
-                                android:layout_height="20dp"
-                                android:layout_marginTop="7dp"
-                                android:text="★★★★★"
-                                android:textColor="#000000"
-                                android:textSize="14dp" />
-                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="70dp"
-                                android:layout_height="20dp"
-                                android:layout_marginLeft="16dp"
-                                android:layout_marginTop="7dp"
-                                android:text="카테고리 : "
-                                android:textColor="#000000"
-                                android:textSize="14dp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/classCategory"
-                                android:layout_width="290dp"
-                                android:layout_height="20dp"
-                                android:layout_marginTop="7dp"
-                                android:text="강아지전문 , 산책가능 , 단독주택"
-                                android:textColor="#000000"
-                                android:textSize="14dp" />
-                        </LinearLayout>
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="25dp"
+                            android:layout_marginTop="10dp"
                             android:orientation="horizontal">
 
                             <TextView
@@ -233,7 +186,7 @@
                                 android:layout_marginLeft="16dp"
                                 android:layout_marginTop="7dp"
                                 android:layout_marginBottom="25dp"
-                                android:text="자기소개"
+                                android:text="글 제목 : "
                                 android:textColor="#000000"
                                 android:textSize="14dp"
                                 android:textStyle="bold" />
@@ -243,7 +196,7 @@
                                 android:layout_width="290dp"
                                 android:layout_height="20dp"
                                 android:layout_marginTop="7dp"
-                                android:text="저희집 강아지라고 생각하고 돌봐드려요"
+                                android:text="23일 오후 3시~5시 강아지 봐주실 분"
                                 android:textColor="#000000"
                                 android:textSize="14dp" />
                         </LinearLayout>

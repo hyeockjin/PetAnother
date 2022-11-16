@@ -1,6 +1,7 @@
 package com.lx.project5
 
 import android.service.autofill.UserData
+import com.lx.data.WriteRegisterResponse
 
 
 class AppData {
@@ -16,7 +17,7 @@ class AppData {
         var lat: String? = null
         var lng: String? = null
         var choiceRegisterItem: ChoiceRegisterData?=null
-        var writeRegisterItem: String?= null
+        var writeRegisterItem: WriteRegisterData?= null
 
         var careImage: String?=null
         var goIndex: Int?=null

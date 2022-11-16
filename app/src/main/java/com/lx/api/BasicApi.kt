@@ -101,6 +101,17 @@ interface BasicApi {
     ): Call<CareListResponse>
 
     /**
+     * GET 방식으로 돌보미어플 글작성 신청 마커클릭 해서 얻은정보 가져오기
+     */
+
+    @GET("care/writeRegister")
+    fun getWriteRegisterInfo(
+        @Query("requestCode") requestCode: String,
+        @Query("awrn") awrn: String
+
+    ): Call<WriteRegisterResponse>
+
+    /**
      * GET 방식으로 주변 펫시터 요청 / 사용가능
      */
 
