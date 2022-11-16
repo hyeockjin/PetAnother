@@ -49,33 +49,66 @@ class CareInfoFragment : Fragment() {
         return binding.root
     }
     fun initView(){
-
-        // 사람 정보 부터
-        BasicClient.api.getMemberList(
-            requestCode = "1001",
-            memberNo = AppData.choiceRegisterItem?.memberNo.toString()
-
-        ).enqueue(object : Callback<MemberListResponse> {
-            override fun onResponse(call: Call<MemberListResponse>, response: Response<MemberListResponse>) {
+        if(AppData.goIndex == 2){
+            val assignTime = "${AppData.choiceRegisterItem?.startTime} ~ ${AppData.choiceRegisterItem?.endTime}"
 
 
-                (activity as MainActivity).showToast("1")
+            // 사람 정보 부터
+            BasicClient.api.getMemberInfo(
+                requestCode = "1001",
+                memberNo = AppData.choiceRegisterItem?.memberNo.toString()
 
-            }
-            override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
+            ).enqueue(object : Callback<MemberListResponse> {
+                override fun onResponse(call: Call<MemberListResponse>, response: Response<MemberListResponse>) {
 
-                (activity as MainActivity).showToast("2")
-            }
+                    AppData.memberData?.memberAddress = response.body()?.data?.get(0)?.memberAddress
+                    AppData.memberData?.memberImage = response.body()?.data?.get(0)?.memberImage
+                    AppData.memberData?.memberName = response.body()?.data?.get(0)?.memberName
+                    AppData.memberData?.memberNo = response.body()?.data?.get(0)?.memberNo
+                    binding.nameOutput.text = AppData.memberData?.memberName
 
-        })
+                    (activity as MainActivity).showToast("1")
+                }
+                override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
+
+                    (activity as MainActivity).showToast("2")
+                }
+
+            })
+            // 그다음 개정보
+            BasicClient.api.getDogInfo(
+                requestCode = "1001",
+                memberNo = AppData.choiceRegisterItem?.memberNo.toString()
+
+            ).enqueue(object : Callback<MemberListResponse> {
+                override fun onResponse(call: Call<MemberListResponse>, response: Response<MemberListResponse>) {
+
+                    AppData.memberData?.memberAddress = response.body()?.data?.get(0)?.memberAddress
+                    AppData.memberData?.memberImage = response.body()?.data?.get(0)?.memberImage
+                    AppData.memberData?.memberName = response.body()?.data?.get(0)?.memberName
+                    AppData.memberData?.memberNo = response.body()?.data?.get(0)?.memberNo
+                    binding.nameOutput.text = AppData.memberData?.memberName
+
+                    (activity as MainActivity).showToast("1")
+                }
+                override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
+
+                    (activity as MainActivity).showToast("2")
+                }
+
+            })
 
 
-        val assignTime = "${AppData.choiceRegisterItem?.startTime} ~ ${AppData.choiceRegisterItem?.endTime}"
 
-        binding.nameOutput.text = AppData.choiceRegisterItem?.memberName
-        binding.outputTime.text = assignTime
+            binding.nameOutput.text = AppData.choiceRegisterItem?.memberName
 
-        val acrn =  AppData.choiceRegisterItem?.acrn
+
+            val acrn =  AppData.choiceRegisterItem?.acrn
+
+        }else if (AppData.goIndex == 1){
+
+        }
+
 
 
 

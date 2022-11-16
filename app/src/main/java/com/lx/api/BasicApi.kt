@@ -127,8 +127,17 @@ interface BasicApi {
      * GET 선택신청 맡김이 정보
      */
 
-    @GET("care/choiceRegisterList")
-    fun getMemberList(
+    @GET("care/memberInfo")
+    fun getMemberInfo(
+        @Query("requestCode") requestCode: String,
+        @Query("memberNo") memberNo: String,
+    ): Call<MemberListResponse>
+
+    /**
+     * GET 선택신청 개 정보
+     */
+    @GET("care/dogInfo")
+    fun getDogInfo(
         @Query("requestCode") requestCode: String,
         @Query("memberNo") memberNo: String,
     ): Call<MemberListResponse>

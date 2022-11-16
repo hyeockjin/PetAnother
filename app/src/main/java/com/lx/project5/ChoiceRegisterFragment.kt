@@ -49,6 +49,7 @@ class ChoiceRegisterFragment : Fragment() {
                     val item = items.get(position)
 
                     AppData.choiceRegisterItem = item
+                    AppData.goIndex = 2
 
 //                    val petInfoIntent = Intent(context, PetInfoFragment::class.java)
 //                    petInfoLauncher.launch(petInfoIntent)
