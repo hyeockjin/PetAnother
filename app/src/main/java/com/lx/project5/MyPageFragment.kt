@@ -36,7 +36,7 @@ class MyPageFragment : Fragment() {
 
         // 나에게 온 신청
         binding.choiceRequestButton.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMvideo)
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMchoiceRegister)
 
         }
 
