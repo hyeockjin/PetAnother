@@ -49,6 +49,7 @@ class ChoiceRegisterFragment : Fragment() {
                     val item = items.get(position)
 
                     AppData.choiceRegisterItem = item
+                    push
 
                     AppData.goIndex = 2
 
