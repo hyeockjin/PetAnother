@@ -284,6 +284,7 @@ class MainActivity : AppCompatActivity() {
                         binding.classSelf.text = response.body()?.data?.get(i)?.assignTitle.toString()
                         AppData.writeRegisterItem?.awrn = response.body()?.data?.get(i)?.awrn!!
                         infoView()
+                        AppData.goIndex = 1
                         binding.cardView.visibility = View.VISIBLE
 
                         true
