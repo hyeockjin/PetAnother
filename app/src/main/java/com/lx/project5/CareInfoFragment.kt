@@ -51,7 +51,7 @@ class CareInfoFragment : Fragment() {
         return binding.root
     }
     fun initView(){
-        Log.v("문", "사람 ${AppData.memberData}, 개 ${AppData.dogData}")
+        Log.v("멍청이2", "사람 ${AppData.memberData?.memberNo}, 개 ${AppData.dogData?.dogNo}")
         if(AppData.goIndex == 2){
             val assignTime = "${AppData.choiceRegisterItem?.startTime} ~ ${AppData.choiceRegisterItem?.endTime}"
             binding.outputTime.text = assignTime
@@ -60,7 +60,7 @@ class CareInfoFragment : Fragment() {
 
 
         }else if (AppData.goIndex == 1){
-            Log.v("문", "사람 ${AppData.memberData}, 개 ${AppData.dogData}")
+            Log.v("멍청이2", "사람 ${AppData.memberData}, 개 ${AppData.dogData}")
             binding.outputTime.text = "${AppData.writeRegisterItem?.startTime} ~ ${AppData.writeRegisterItem?.endTime}"
             binding.nameOutput.text = AppData.memberData?.memberName
             binding.outputDogName.text = AppData.dogData?.dogName

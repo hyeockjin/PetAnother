@@ -311,6 +311,7 @@ class MainActivity : AppCompatActivity() {
                 AppData.memberData?.memberImage = response.body()?.data?.get(0)?.memberImage
                 AppData.memberData?.memberName = response.body()?.data?.get(0)?.memberName
                 AppData.memberData?.memberNo = response.body()?.data?.get(0)?.memberNo
+                Log.v("멍청이", "${response.body()?.data?.get(0)}")
 
 
                 showToast("1")
@@ -336,6 +337,7 @@ class MainActivity : AppCompatActivity() {
                 AppData.dogData?.dogCharacter = response.body()?.data?.get(0)?.dogCharacter.toString()
                 AppData.dogData?.dogEducation = response.body()?.data?.get(0)?.dogEducation.toString()
                 AppData.dogData?.dogGender = response.body()?.data?.get(0)?.dogGender.toString()
+                Log.v("멍청이", "${response.body()?.data?.get(0)}")
 
 
                 showToast("1")
@@ -346,6 +348,8 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+         binding.cardView.visibility = View.VISIBLE
+
     }
 
 

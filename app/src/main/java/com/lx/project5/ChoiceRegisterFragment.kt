@@ -53,14 +53,16 @@ class ChoiceRegisterFragment : Fragment() {
 
                     AppData.choiceRegisterItem = item
 
-                    Log.v("멍청이", "${AppData.choiceRegisterItem?.acrn}")
+                    Log.v("멍청이11", "${AppData.choiceRegisterItem?.acrn}")
+                    Log.v("멍청이11", "${AppData.choiceRegisterItem?.memberNo}")
+                    AppData.goIndex = 2
                     pushChoiceRegisterData()
 
-                    AppData.goIndex = 2
+
 
 //                    val petInfoIntent = Intent(context, PetInfoFragment::class.java)
 //                    petInfoLauncher.launch(petInfoIntent)
-                    (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareInfo)
+
 
                 }
             }
@@ -83,7 +85,8 @@ class ChoiceRegisterFragment : Fragment() {
                 AppData.memberData?.memberImage = response.body()?.data?.get(0)?.memberImage
                 AppData.memberData?.memberName = response.body()?.data?.get(0)?.memberName
                 AppData.memberData?.memberNo = response.body()?.data?.get(0)?.memberNo
-                Log.v("멍청이", "${response.body()?.data?.get(0)}")
+                Log.v("멍청이0", "${response.body()?.data?.get(0)?.memberNo}")
+                Log.v("멍청이0", "${AppData.memberData?.memberNo}")
 
             }
             override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
@@ -107,7 +110,7 @@ class ChoiceRegisterFragment : Fragment() {
                 AppData.dogData?.dogEducation = response.body()?.data?.get(0)?.dogEducation.toString()
                 AppData.dogData?.dogGender = response.body()?.data?.get(0)?.dogGender.toString()
 
-                Log.v("멍청이", "${response.body()?.data?.get(0)}")
+                Log.v("멍청이1", "${AppData.dogData?.dogNo}")
 
             }
             override fun onFailure(call: Call<DogListResponse>, t: Throwable) {
@@ -115,6 +118,7 @@ class ChoiceRegisterFragment : Fragment() {
             }
 
         })
+        (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareInfo)
     }
 
 
