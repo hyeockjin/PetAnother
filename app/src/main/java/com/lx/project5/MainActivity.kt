@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
 
     var locationClient: FusedLocationProviderClient? = null
 
+
     lateinit var map: GoogleMap
 
     var myMarker: Marker? = null
@@ -116,7 +117,7 @@ class MainActivity : AppCompatActivity() {
             return@setOnNavigationItemSelectedListener true
         }
         //화면이 보일 때 첫 화면 보여주기
-       // onFragmentChanged(ScreenItem.ITEM1)
+        // onFragmentChanged(ScreenItem.ITEM1)
 
         binding.cardView.visibility = View.GONE
         // 위험권한 요청하기
@@ -296,60 +297,56 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun infoView() {
-        if (AppData.goIndex == 1){
+     fun infoView() {
+        // 사람 정보 부터
+        BasicClient.api.getMemberInfo(
+            requestCode = "1001",
+            memberNo = AppData.writeRegisterItem?.memberNo.toString()
+
+        ).enqueue(object : Callback<MemberListResponse> {
+            override fun onResponse(call: Call<MemberListResponse>, response: Response<MemberListResponse>) {
+
+                AppData.memberData?.memberAddress = response.body()?.data?.get(0)?.memberAddress
+                AppData.memberData?.memberImage = response.body()?.data?.get(0)?.memberImage
+                AppData.memberData?.memberName = response.body()?.data?.get(0)?.memberName
+                AppData.memberData?.memberNo = response.body()?.data?.get(0)?.memberNo
 
 
-            // 사람 정보 부터
-            BasicClient.api.getMemberInfo(
-                requestCode = "1001",
-                memberNo = AppData.writeRegisterItem?.memberNo.toString()
+                showToast("1")
+            }
+            override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
 
-            ).enqueue(object : Callback<MemberListResponse> {
-                override fun onResponse(call: Call<MemberListResponse>, response: Response<MemberListResponse>) {
+                showToast("2")
+            }
 
-                    AppData.memberData?.memberAddress = response.body()?.data?.get(0)?.memberAddress
-                    AppData.memberData?.memberImage = response.body()?.data?.get(0)?.memberImage
-                    AppData.memberData?.memberName = response.body()?.data?.get(0)?.memberName
-                    AppData.memberData?.memberNo = response.body()?.data?.get(0)?.memberNo
+        })
+        // 그다음 개정보
+        BasicClient.api.getDogInfo(
+            requestCode = "1001",
+            dogNo = AppData.writeRegisterItem?.dogNo.toString()
 
+        ).enqueue(object : Callback<DogListResponse> {
+            override fun onResponse(call: Call<DogListResponse>, response: Response<DogListResponse>) {
 
-                    showToast("1")
-                }
-                override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
-
-                    showToast("2")
-                }
-
-            })
-            // 그다음 개정보
-            BasicClient.api.getDogInfo(
-                requestCode = "1001",
-                dogNo = AppData.writeRegisterItem?.dogNo.toString()
-
-            ).enqueue(object : Callback<DogListResponse> {
-                override fun onResponse(call: Call<DogListResponse>, response: Response<DogListResponse>) {
-
-                    AppData.dogData?.dogNo = response.body()?.data?.get(0)?.dogNo.toString()
-                    AppData.dogData?.dogAge = response.body()?.data?.get(0)?.dogAge.toString()
-                    AppData.dogData?.dogImage = response.body()?.data?.get(0)?.dogImage.toString()
-                    AppData.dogData?.dogBreed = response.body()?.data?.get(0)?.dogBreed.toString()
-                    AppData.dogData?.dogCharacter = response.body()?.data?.get(0)?.dogCharacter.toString()
-                    AppData.dogData?.dogEducation = response.body()?.data?.get(0)?.dogEducation.toString()
-                    AppData.dogData?.dogGender = response.body()?.data?.get(0)?.dogGender.toString()
+                AppData.dogData?.dogNo = response.body()?.data?.get(0)?.dogNo.toString()
+                AppData.dogData?.dogAge = response.body()?.data?.get(0)?.dogAge.toString()
+                AppData.dogData?.dogImage = response.body()?.data?.get(0)?.dogImage.toString()
+                AppData.dogData?.dogBreed = response.body()?.data?.get(0)?.dogBreed.toString()
+                AppData.dogData?.dogCharacter = response.body()?.data?.get(0)?.dogCharacter.toString()
+                AppData.dogData?.dogEducation = response.body()?.data?.get(0)?.dogEducation.toString()
+                AppData.dogData?.dogGender = response.body()?.data?.get(0)?.dogGender.toString()
 
 
-                    showToast("1")
-                }
-                override fun onFailure(call: Call<DogListResponse>, t: Throwable) {
+                showToast("1")
+            }
+            override fun onFailure(call: Call<DogListResponse>, t: Throwable) {
 
-                    showToast("2")
-                }
+                showToast("2")
+            }
 
-            })
-        }
-
+        })
     }
+
 
 
     fun requestLocation() {
