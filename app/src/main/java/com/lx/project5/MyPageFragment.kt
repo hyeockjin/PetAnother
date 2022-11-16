@@ -11,7 +11,6 @@ import com.bumptech.glide.Glide
 import com.lx.api.BasicClient
 import com.lx.data.CareListResponse
 import com.lx.data.MemberListResponse
-import com.lx.project5.AppData.Companion.careImage
 import com.lx.project5.databinding.FragmentFirstBinding
 import com.lx.project5.databinding.FragmentMyPageBinding
 import retrofit2.Call
