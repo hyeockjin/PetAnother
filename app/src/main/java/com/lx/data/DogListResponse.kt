@@ -14,7 +14,6 @@ data class DogListResponse(
     val message: String
 ) {
     data class Data(
-        val dogVaccination: String,
         @SerializedName("dogAge")
         val dogAge: String,
         @SerializedName("dogCharacter")

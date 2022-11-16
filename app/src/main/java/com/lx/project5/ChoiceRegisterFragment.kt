@@ -53,6 +53,7 @@ class ChoiceRegisterFragment : Fragment() {
 
                     AppData.choiceRegisterItem = item
 
+                    Log.v("멍청이", "${AppData.choiceRegisterItem?.acrn}")
                     pushChoiceRegisterData()
 
                     AppData.goIndex = 2
@@ -73,6 +74,8 @@ class ChoiceRegisterFragment : Fragment() {
             requestCode = "1001",
             memberNo = AppData.choiceRegisterItem?.memberNo.toString()
 
+
+
         ).enqueue(object : Callback<MemberListResponse> {
             override fun onResponse(call: Call<MemberListResponse>, response: Response<MemberListResponse>) {
 
@@ -80,7 +83,7 @@ class ChoiceRegisterFragment : Fragment() {
                 AppData.memberData?.memberImage = response.body()?.data?.get(0)?.memberImage
                 AppData.memberData?.memberName = response.body()?.data?.get(0)?.memberName
                 AppData.memberData?.memberNo = response.body()?.data?.get(0)?.memberNo
-                Log.v("현", "${response.body()?.data?.get(0)}")
+                Log.v("멍청이", "${response.body()?.data?.get(0)}")
 
             }
             override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
@@ -104,7 +107,7 @@ class ChoiceRegisterFragment : Fragment() {
                 AppData.dogData?.dogEducation = response.body()?.data?.get(0)?.dogEducation.toString()
                 AppData.dogData?.dogGender = response.body()?.data?.get(0)?.dogGender.toString()
 
-                Log.v("현", "${response.body()?.data?.get(0)}")
+                Log.v("멍청이", "${response.body()?.data?.get(0)}")
 
             }
             override fun onFailure(call: Call<DogListResponse>, t: Throwable) {
