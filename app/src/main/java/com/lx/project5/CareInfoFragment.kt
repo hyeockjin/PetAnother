@@ -51,19 +51,36 @@ class CareInfoFragment : Fragment() {
         return binding.root
     }
     fun initView(){
+
         Log.v("멍청이2", "사람 ${AppData.memberData?.memberNo}, 개 ${AppData.dogData?.dogNo}")
         if(AppData.goIndex == 2){
-            val assignTime = "${AppData.choiceRegisterItem?.startTime} ~ ${AppData.choiceRegisterItem?.endTime}"
-            binding.outputTime.text = assignTime
-            binding.nameOutput.text = AppData.memberData?.memberName
-            binding.outputDogName.text = AppData.dogData?.dogName
+            AppData.memberData.apply{
+                this?.memberImage?.let{
+                    val uri = Uri.parse("http://192.168.0.12:8001${memberImage}")
+                    Glide.with(binding.profileView).load(uri).into(binding.profileView)
+                }
+                val assignTime = "${AppData.choiceRegisterItem?.startTime} ~ ${AppData.choiceRegisterItem?.endTime}"
+                binding.outputTime.text = assignTime
+                binding.nameOutput.text = AppData.memberData?.memberName
+                binding.outputDogName.text = AppData.dogData?.dogName
+
+            }
+
 
 
         }else if (AppData.goIndex == 1){
             Log.v("멍청이2", "사람 ${AppData.memberData}, 개 ${AppData.dogData}")
-            binding.outputTime.text = "${AppData.writeRegisterItem?.startTime} ~ ${AppData.writeRegisterItem?.endTime}"
-            binding.nameOutput.text = AppData.memberData?.memberName
-            binding.outputDogName.text = AppData.dogData?.dogName
+            AppData.memberData.apply{
+                this?.memberImage?.let{
+                    val uri = Uri.parse("http://192.168.0.12:8001${memberImage}")
+                    Glide.with(binding.profileView).load(uri).into(binding.profileView)
+                }
+                binding.outputTime.text = "${AppData.writeRegisterItem?.startTime} ~ ${AppData.writeRegisterItem?.endTime}"
+                binding.nameOutput.text = AppData.memberData?.memberName
+                binding.outputDogName.text = AppData.dogData?.dogName
+
+            }
+
 
         }
 

@@ -60,6 +60,7 @@ class ChoiceRegisterFragment : Fragment() {
 
 
 
+
 //                    val petInfoIntent = Intent(context, PetInfoFragment::class.java)
 //                    petInfoLauncher.launch(petInfoIntent)
 
@@ -81,6 +82,7 @@ class ChoiceRegisterFragment : Fragment() {
         ).enqueue(object : Callback<MemberListResponse> {
             override fun onResponse(call: Call<MemberListResponse>, response: Response<MemberListResponse>) {
 
+                AppData.memberData = MemberData()
                 AppData.memberData?.memberAddress = response.body()?.data?.get(0)?.memberAddress
                 AppData.memberData?.memberImage = response.body()?.data?.get(0)?.memberImage
                 AppData.memberData?.memberName = response.body()?.data?.get(0)?.memberName
@@ -101,7 +103,7 @@ class ChoiceRegisterFragment : Fragment() {
 
         ).enqueue(object : Callback<DogListResponse> {
             override fun onResponse(call: Call<DogListResponse>, response: Response<DogListResponse>) {
-
+                AppData.dogData = PetData()
                 AppData.dogData?.dogNo = response.body()?.data?.get(0)?.dogNo.toString()
                 AppData.dogData?.dogAge = response.body()?.data?.get(0)?.dogAge.toString()
                 AppData.dogData?.dogImage = response.body()?.data?.get(0)?.dogImage.toString()
@@ -119,6 +121,7 @@ class ChoiceRegisterFragment : Fragment() {
 
         })
         (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareInfo)
+
     }
 
 

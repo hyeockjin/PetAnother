@@ -1,14 +1,14 @@
 package com.lx.project5
 
-data class PetData (
-    var dogNo: String,
-    var memberNo: String,
-    var dogName: String,
-    var dogGender: String,
-    var dogAge: String,
-    var dogEducation: String,
-    var dogCharacter: String,
-    var dogBreed: String,
-    var dogImage: String
+class PetData {
+    var dogNo: String? = null
+    var memberNo: String? = null
+    var dogName: String? = null
+    var dogGender: String? = null
+    var dogAge: String? = null
+    var dogEducation: String? = null
+    var dogCharacter: String? = null
+    var dogBreed: String? = null
+    var dogImage: String? = null
 
-)
+}
