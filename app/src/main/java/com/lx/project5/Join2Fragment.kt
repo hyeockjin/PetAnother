@@ -46,7 +46,6 @@ class Join2Fragment : Fragment() {
     //앨범에서 가져오기위한 런처
     val albumLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
 
-
         when(it.resultCode) {
             AppCompatActivity.RESULT_OK -> {
                 it.data?.apply {
@@ -67,8 +66,8 @@ class Join2Fragment : Fragment() {
         }
     }
 
-    val captureLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
 
+    val captureLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
 
         when(it.resultCode) {
             AppCompatActivity.RESULT_OK -> {
@@ -104,7 +103,7 @@ class Join2Fragment : Fragment() {
             startActivity(locationIntent)
         }
 
-        binding.imageButton4.setOnClickListener{
+        binding.backButton9.setOnClickListener{
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMjoin1)
         }
 
@@ -119,7 +118,6 @@ class Join2Fragment : Fragment() {
 
         return binding.root
     }
-
 
 
     //뷰 초기화
@@ -231,7 +229,6 @@ class Join2Fragment : Fragment() {
 
         })
     }
-
 
 
 }

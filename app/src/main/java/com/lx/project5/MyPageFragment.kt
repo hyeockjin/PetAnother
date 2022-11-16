@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.lx.api.BasicClient
 import com.lx.data.CareListResponse
 import com.lx.data.MemberListResponse
+import com.lx.project5.AppData.Companion.careImage
 import com.lx.project5.databinding.FragmentFirstBinding
 import com.lx.project5.databinding.FragmentMyPageBinding
 import retrofit2.Call
@@ -39,10 +40,10 @@ class MyPageFragment : Fragment() {
     }
 
     fun initView(){
-        AppData.loginData?.apply{
-            this.careImage?.let{
+        AppData.loginData.apply{
+            this?.careImage?.let{
                 val uri = Uri.parse("http://192.168.0.215:8001${careImage}")
-                Glide.with(binding.imageView2).load(uri).into(binding.imageView2)
+                Glide.with(binding.imageView12).load(uri).into(binding.imageView12)
             }
             binding.textView7.text = AppData.loginData?.careName
             binding.textView8.text = AppData.loginData?.careId

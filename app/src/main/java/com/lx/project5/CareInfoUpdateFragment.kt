@@ -16,6 +16,8 @@ import com.bumptech.glide.Glide
 import com.lx.api.BasicClient
 import com.lx.data.CareListResponse
 import com.lx.data.MemberListResponse
+import com.lx.project5.AppData.Companion.careImage
+import com.lx.project5.AppData.Companion.loginData
 import com.lx.project5.databinding.FragmentCareInfoUpdateBinding
 import com.permissionx.guolindev.PermissionX
 import retrofit2.Call
@@ -57,6 +59,11 @@ class CareInfoUpdateFragment : Fragment() {
         initView()
         setView()
 
+        binding.showMemberId.text = AppData.loginData?.careId.toString()
+
+        binding.button11.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
+        }
 
         binding.infoUpdateButton.setOnClickListener {
             updateCare()
@@ -77,7 +84,7 @@ class CareInfoUpdateFragment : Fragment() {
     }
 
     fun setView(){
-        AppData.loginData?.apply{
+        AppData?.apply{
             this.careImage?.let {
                 val uri = Uri.parse("http://192.168.0.215:8001${careImage}")
                 Glide.with(binding.inputImageView).load(uri).into(binding.inputImageView)
