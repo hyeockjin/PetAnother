@@ -2,10 +2,7 @@ package com.lx.api
 
 import android.util.Log
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable
-import com.lx.data.CareListResponse
-import com.lx.data.FileUploadResponse
-import com.lx.data.MemberListResponse
-import com.lx.data.MemberRequestResponse
+import com.lx.data.*
 import okhttp3.Interceptor
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
@@ -117,6 +114,18 @@ interface BasicApi {
     ): Call<CareListResponse>
 
     /**
+     * GET 방식으로 주변 펫시터 요청 / 사용가능
+     */
+
+    @GET("care/choiceRegisterList")
+    fun getChoiceRegisterList(
+        @Query("requestCode") requestCode: String,
+        @Query("careNo") careNo: String,
+    ): Call<ChoiceRegisterResponse>
+
+
+
+    /**
      * 파일 업로드 요청 / 사용하자
      */
 
@@ -152,7 +161,7 @@ class BasicClient {
         private const val PROTOCOL = "http"
 
         // 기본 URL
-        private const val BASE_URL = "http://192.168.0.215:8001/"
+        private const val BASE_URL = "http://192.168.0.15:8001/"
 
         // 헤더 속성
         private const val CLIENT_ID = ""

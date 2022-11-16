@@ -34,6 +34,12 @@ class MyPageFragment : Fragment() {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMvideo)
         }
 
+        // 나에게 온 신청
+        binding.choiceRequestButton.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMvideo)
+
+        }
+
 
         return binding.root
     }
@@ -41,7 +47,7 @@ class MyPageFragment : Fragment() {
     fun initView(){
         AppData.loginData.apply{
             this?.careImage?.let{
-                val uri = Uri.parse("http://192.168.0.215:8001${careImage}")
+                val uri = Uri.parse("http://192.168.0.15:8001${careImage}")
                 Glide.with(binding.imageView12).load(uri).into(binding.imageView12)
             }
             binding.textView7.text = AppData.loginData?.careName

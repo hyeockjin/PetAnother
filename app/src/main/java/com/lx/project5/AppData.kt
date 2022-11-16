@@ -14,6 +14,7 @@ class AppData {
         var point: Int? = 0
         var lat: String? = null
         var lng: String? = null
+        var choiceRegisterItem: ChoiceRegisterData?=null
 
         var careImage: String?=null
 

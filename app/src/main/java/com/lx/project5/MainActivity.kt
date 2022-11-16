@@ -65,7 +65,9 @@ class MainActivity : AppCompatActivity() {
         ITEMdogInfo,
         ITEMmemInfo,
         ITEMend,
-        ITEMvideo
+        ITEMvideo,
+        ITEMchoiceRegister,
+        ITEMchoiceRegisterInfo
 
     }
 
@@ -239,6 +241,13 @@ class MainActivity : AppCompatActivity() {
             ScreenItem.ITEMvideo -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, VideoFragment()).commit()
             }
+            ScreenItem.ITEMchoiceRegister -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, ChoiceRegisterFragment()).commit()
+            }
+            ScreenItem.ITEMchoiceRegisterInfo -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, CareInfoFragment()).commit()
+            }
+
         }
 
     }
