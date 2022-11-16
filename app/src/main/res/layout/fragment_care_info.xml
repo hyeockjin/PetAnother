@@ -236,18 +236,13 @@
                                 android:padding="16dp"
                                 android:text="돌봄기간" />
 
-                            <EditText
-                                android:id="@+id/output1"
-                                android:layout_width="match_parent"
+                            <TextView
+                                android:id="@+id/outputTime"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginRight="20dp"
                                 android:layout_weight="1"
-                                android:background="#F6F6F6"
-                                android:gravity="center_vertical"
-                                android:hint="2022.11.14 15:00 - 2022.11.14 18:00"
-                                android:padding="10dp"
-                                android:textSize="14sp"
-                                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                                android:text="TextView" />
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -262,18 +257,13 @@
                                 android:padding="16dp"
                                 android:text="할 일" />
 
-                            <EditText
-                                android:id="@+id/output55"
-                                android:layout_width="match_parent"
+                            <TextView
+                                android:id="@+id/countTodo"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginRight="20dp"
                                 android:layout_weight="1"
-                                android:background="#F6F6F6"
-                                android:gravity="center_vertical"
-                                android:hint="3"
-                                android:padding="10dp"
-                                android:textSize="14sp"
-                                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                                android:text="TextView" />
+
                         </LinearLayout>
 
                         <LinearLayout
