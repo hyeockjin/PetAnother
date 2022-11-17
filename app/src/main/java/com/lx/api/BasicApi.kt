@@ -44,6 +44,8 @@ interface BasicApi {
         @Query("requestCode") awrn: String
     ): Call<MemberRequestResponse>
 
+
+
     /**
      * POST 방식으로 멤버 회원가입 요청 / 사용가능
      */
@@ -181,7 +183,7 @@ class BasicClient {
         private const val PROTOCOL = "http"
 
         // 기본 URL
-        private const val BASE_URL = "http://192.168.0.15:8001/"
+        private const val BASE_URL = "http://172.168.10.3:8001/"
 
         // 헤더 속성
         private const val CLIENT_ID = ""
