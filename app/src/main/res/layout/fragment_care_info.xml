@@ -19,6 +19,7 @@
             android:background="#faf7f4"
             android:gravity="center"
             android:text="회원정보수정"
+            android:fontFamily="@font/rokaf_bold_medium"
             android:textAlignment="center"
             android:textSize="16sp"
             android:textStyle="normal" />
@@ -52,7 +53,7 @@
 
                     <TextView
                         android:id="@+id/textView3"
-                        android:layout_width="match_parent"
+                        android:layout_width="372dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
@@ -65,68 +66,62 @@
                         android:layout_margin="10dp"
                         app:cardBackgroundColor="#FAFAFA"
                         app:cardCornerRadius="8dp"
-                        app:contentPadding="10dp">
+                        app:contentPadding="5dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="55dp"
                             android:orientation="horizontal">
 
                             <ImageView
                                 android:id="@+id/profileView"
-                                android:layout_width="70dp"
-                                android:layout_height="match_parent"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
                                 android:layout_margin="5dp"
                                 app:srcCompat="@drawable/person1" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="5dp"
-                                android:orientation="vertical">
+                                android:layout_gravity="center"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="10dp">
+
+                                <TextView
+                                    android:id="@+id/nameOutput"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="김용현"
+                                    android:textSize="18sp" />
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginTop="20dp"
-                                    android:layout_marginBottom="20dp">
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
 
-                                    <TextView
-                                        android:id="@+id/nameOutput"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center_vertical"
-                                        android:text="김용현"
-                                        android:textSize="20sp" />
-
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="vertical">
-
-                                        <Button
-                                            android:id="@+id/button6"
-                                            android:layout_width="65dp"
-                                            android:layout_height="25dp"
-                                            android:layout_gravity="end"
-                                            android:background="@drawable/pinkbutton"
-                                            android:text="자세히보기"
-                                            android:textSize="10sp"
-                                            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-                                    </LinearLayout>
-
+                                    <Button
+                                        android:id="@+id/button6"
+                                        android:layout_width="65dp"
+                                        android:layout_height="25dp"
+                                        android:layout_gravity="end"
+                                        android:background="@drawable/pinkbutton"
+                                        android:text="자세히보기"
+                                        android:textSize="10sp"
+                                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
                                 </LinearLayout>
 
                             </LinearLayout>
+
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
                     <TextView
                         android:id="@+id/textView12"
-                        android:layout_width="match_parent"
+                        android:layout_width="372dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
                         android:text="반려견"
                         android:textSize="16sp" />
 
@@ -136,66 +131,63 @@
                         android:layout_margin="10dp"
                         app:cardBackgroundColor="#FAFAFA"
                         app:cardCornerRadius="8dp"
-                        app:contentPadding="10dp">
+                        app:contentPadding="5dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="55dp"
                             android:orientation="horizontal">
 
                             <ImageView
                                 android:id="@+id/imageView88"
-                                android:layout_width="70dp"
-                                android:layout_height="match_parent"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
                                 android:layout_margin="5dp"
                                 app:srcCompat="@drawable/dogicon" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="5dp"
-                                android:orientation="vertical">
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="10dp">
+
+                                <TextView
+                                    android:id="@+id/outputDogName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="김용현"
+                                    android:textSize="18sp" />
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginTop="20dp"
-                                    android:layout_marginBottom="20dp">
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:orientation="vertical">
 
-                                    <TextView
-                                        android:id="@+id/outputDogName"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center_vertical"
-                                        android:text="용현문"
-                                        android:textSize="20sp" />
-
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="vertical">
-
-                                        <Button
-                                            android:id="@+id/button8"
-                                            android:layout_width="65dp"
-                                            android:layout_height="25dp"
-                                            android:layout_gravity="end"
-                                            android:background="@drawable/pinkbutton"
-                                            android:text="자세히보기"
-                                            android:textSize="10sp"
-                                            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-                                    </LinearLayout>
-
+                                    <Button
+                                        android:id="@+id/button8"
+                                        android:layout_width="65dp"
+                                        android:layout_height="25dp"
+                                        android:layout_gravity="end"
+                                        android:background="@drawable/pinkbutton"
+                                        android:text="자세히보기"
+                                        android:textSize="10sp"
+                                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
                                 </LinearLayout>
 
                             </LinearLayout>
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:paddingRight="10dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -204,10 +196,10 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="100dp"
+                                android:layout_width="90dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:padding="16dp"
+                                android:padding="10dp"
                                 android:text="돌봄기간" />
 
                             <TextView
@@ -217,7 +209,9 @@
                                 android:layout_weight="1"
                                 android:background="@drawable/bold1"
                                 android:backgroundTint="#C6C6C6"
-                                android:text="TextView" />
+                                android:padding="5dp"
+                                android:text="TextView"
+                                android:textSize="16sp" />
 
                         </LinearLayout>
 
@@ -227,10 +221,10 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="100dp"
+                                android:layout_width="90dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:padding="16dp"
+                                android:padding="10dp"
                                 android:text="할 일" />
 
                             <TextView
@@ -240,7 +234,9 @@
                                 android:layout_weight="1"
                                 android:background="@drawable/bold1"
                                 android:backgroundTint="#C6C6C6"
-                                android:text="TextView" />
+                                android:padding="5dp"
+                                android:text="TextView"
+                                android:textSize="16sp" />
 
                         </LinearLayout>
 
@@ -250,10 +246,10 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="100dp"
+                                android:layout_width="90dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:padding="16dp"
+                                android:padding="10dp"
                                 android:text="글 제목" />
 
                             <TextView
@@ -262,7 +258,9 @@
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/bold1"
                                 android:backgroundTint="#C6C6C6"
-                                android:text="TextView" />
+                                android:padding="5dp"
+                                android:text="TextView"
+                                android:textSize="16sp" />
 
                         </LinearLayout>
 
@@ -273,10 +271,10 @@
 
                             <TextView
                                 android:id="@+id/textView30"
-                                android:layout_width="100dp"
+                                android:layout_width="90dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:padding="16dp"
+                                android:padding="10dp"
                                 android:text="글 내용" />
 
                             <TextView
@@ -287,8 +285,8 @@
                                 android:background="@drawable/bold1"
                                 android:backgroundTint="#C6C6C6"
                                 android:gravity="center_vertical"
-                                android:padding="16dp"
-                                android:textSize="14sp"
+                                android:padding="5dp"
+                                android:textSize="16sp"
                                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
                         </LinearLayout>
 
@@ -304,8 +302,8 @@
                             android:id="@+id/button5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="#573E8B28"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/bold"
                             android:text="할일" />
 
                         <Button
@@ -313,7 +311,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="#573E8B28"
+                            android:background="@drawable/pinkbutton"
                             android:text="채팅" />
 
                     </LinearLayout>

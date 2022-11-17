@@ -43,21 +43,6 @@
                         android:text="김용현"
                         android:textSize="20sp" />
 
-                    <TextView
-                        android:id="@+id/textView36"
-                        android:layout_width="30dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="10dp"
-
-                        android:background="@drawable/bold2"
-                        android:backgroundTint="#42A5F5"
-                        android:gravity="center_horizontal|center_vertical"
-                        android:text="신"
-                        android:textColor="#FFFFFF"
-                        android:textSize="10sp"
-                        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

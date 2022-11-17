@@ -25,6 +25,7 @@
                 android:background="#faf7f4"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="나에게 온 리스트"
+                android:fontFamily="@font/rokaf_bold_medium"
                 android:textSize="16sp"
                 android:textStyle="normal" />
 

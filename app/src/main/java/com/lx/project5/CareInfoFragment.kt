@@ -48,10 +48,10 @@ class CareInfoFragment : Fragment() {
 
         }
 
-        binding.imageButton3.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEM1)
-
-        }
+//        binding.imageButton3.setOnClickListener {
+//            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEM1)
+//
+//        }
 
         return binding.root
     }

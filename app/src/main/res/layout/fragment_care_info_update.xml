@@ -22,6 +22,7 @@
             android:background="#faf7f4"
             android:gravity="center"
             android:text="회원정보수정"
+            android:fontFamily="@font/rokaf_bold_medium"
             android:textAlignment="center"
             android:textSize="16sp"
             android:textStyle="normal" />

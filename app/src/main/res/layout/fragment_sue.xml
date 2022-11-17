@@ -19,6 +19,7 @@
             android:background="#faf7f4"
             android:gravity="center_horizontal|center_vertical"
             android:text="신고하기"
+            android:fontFamily="@font/rokaf_bold_medium"
             android:textSize="16sp"
             android:textStyle="normal" />
 
@@ -41,17 +42,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:orientation="horizontal">
-
-                        <ImageButton
-                            android:id="@+id/imageButton2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:backgroundTint="#FFFFFF"
-                            android:src="@drawable/capture"
-                            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-                    </LinearLayout>
+                        android:orientation="horizontal"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -138,7 +129,7 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:orientation="vertical"
                             android:padding="5dp">
@@ -146,9 +137,8 @@
                             <EditText
                                 android:id="@+id/input3"
                                 android:layout_width="367dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="230dp"
                                 android:layout_marginRight="20dp"
-                                android:layout_weight="1"
                                 android:background="@drawable/bold1"
                                 android:backgroundTint="#D5D5D5"
                                 android:gravity="center_vertical"
@@ -157,14 +147,50 @@
                                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
                         </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView13"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:padding="16dp"
+                                android:text="사진등록" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/imageButton2"
+                                    android:layout_width="86dp"
+                                    android:layout_height="86dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/camera3" />
+
+                                <ImageView
+                                    android:id="@+id/imageButton3"
+                                    android:layout_width="86dp"
+                                    android:layout_height="86dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/camera3" />
+
+                                <ImageView
+                                    android:id="@+id/imageButton5"
+                                    android:layout_width="86dp"
+                                    android:layout_height="86dp"
+                                    android:layout_weight="1"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/camera3" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
                     </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal" >
 
                 </LinearLayout>
 

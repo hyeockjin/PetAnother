@@ -37,9 +37,10 @@
             android:background="#faf7f4"
             android:gravity="center_horizontal|center_vertical"
             android:text="리뷰작성"
+            android:fontFamily="@font/rokaf_bold_medium"
             android:textAlignment="center"
             android:textSize="16sp"
-            android:textStyle="normal|bold" />
+            android:textStyle="normal" />
 
         <LinearLayout
             android:layout_width="match_parent"

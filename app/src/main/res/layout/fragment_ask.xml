@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="10dp"
     android:background="#FFFFFF"
     tools:context=".SueFragment">
 
@@ -29,6 +30,7 @@
                     android:background="#faf7f4"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="문의하기"
+                    android:fontFamily="@font/rokaf_bold_medium"
                     android:textAlignment="center"
                     android:textSize="16sp"
                     android:textStyle="normal" />
@@ -69,7 +71,7 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="100dp"
+                            android:layout_width="90dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:padding="16dp"
@@ -97,7 +99,7 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="100dp"
+                            android:layout_width="90dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:padding="16dp"
@@ -127,12 +129,12 @@
                         <EditText
                             android:id="@+id/input3"
                             android:layout_width="367dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="168dp"
                             android:layout_marginRight="20dp"
                             android:background="@drawable/bold1"
                             android:backgroundTint="#C8C8C8"
                             android:gravity="top|center_vertical"
-                            android:hint="다른 이용자들이 볼 수 있는 리뷰입니다. 자세한 후기는 다른 이용자들의 선택에 많은 도움이 되며, 오해의 소지가 있는 내용을 작성 시 검토 후 비공개 조치될 수 있습니다.                                                                                                                                                    "
+                            android:hint="오해의 소지가 있는 내용을 작성 시 검토 후 비공개 조치될 수 있습니다.                                                                                                                                                    "
                             android:padding="10dp"
                             android:textSize="14sp"
                             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
@@ -153,6 +155,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/pinkbutton"
+
                     android:text="문의하기" />
             </LinearLayout>
         </LinearLayout>

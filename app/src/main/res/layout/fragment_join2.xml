@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".Join2Fragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:background="#FFFFFF"
         android:padding="10dp">
 
         <Button
@@ -31,32 +33,17 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/button13"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/backButton9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:backgroundTint="#faf7f4"
-                    android:src="@drawable/arrow"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="match_parent"
-                    android:layout_height="46dp"
-                    android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginRight="40dp"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="회원가입(2/2)"
-                    android:textSize="20sp"
-                    android:textStyle="normal" />
-            </LinearLayout>
+                android:layout_height="46dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:background="#faf7f4"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="회원가입(2/2)"
+                android:fontFamily="@font/rokaf_bold_medium"
+                android:textSize="16sp"
+                android:textStyle="normal" />
 
             <LinearLayout
                 android:layout_width="410dp"
@@ -103,11 +90,14 @@
                     <EditText
                         android:id="@+id/registerId"
                         android:layout_width="218dp"
-                        android:layout_height="48dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="45dp"
+                        android:background="@drawable/bold1"
+                        android:backgroundTint="#A5A5A5"
                         android:ems="10"
                         android:hint="아이디"
                         android:inputType="textPersonName"
+                        android:padding="10dp"
                         tools:ignore="TouchTargetSizeCheck" />
 
                     <Button
@@ -125,7 +115,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
                     <EditText
                         android:id="@+id/registerName"
@@ -133,10 +124,13 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="10dp"
+                        android:background="@drawable/bold1"
+                        android:backgroundTint="#A5A5A5"
                         android:ems="10"
                         android:hint="이름"
                         android:inputType="textPersonName"
-                        android:minHeight="48dp" />
+                        android:minHeight="48dp"
+                        android:padding="10dp" />
 
                     <EditText
                         android:id="@+id/registerPw"
@@ -144,10 +138,13 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="10dp"
+                        android:background="@drawable/bold1"
+                        android:backgroundTint="#A5A5A5"
                         android:ems="10"
                         android:hint="비밀번호"
                         android:inputType="textPersonName"
-                        android:minHeight="48dp" />
+                        android:minHeight="48dp"
+                        android:padding="10dp" />
 
                     <EditText
                         android:id="@+id/pwCheck"
@@ -155,10 +152,13 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="10dp"
+                        android:background="@drawable/bold1"
+                        android:backgroundTint="#A5A5A5"
                         android:ems="10"
                         android:hint="비밀번호 확인"
                         android:inputType="textPersonName"
-                        android:minHeight="48dp" />
+                        android:minHeight="48dp"
+                        android:padding="10dp" />
 
                     <EditText
                         android:id="@+id/addressInput"
@@ -166,9 +166,12 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="10dp"
+                        android:background="@drawable/bold1"
+                        android:backgroundTint="#A5A5A5"
                         android:ems="10"
                         android:hint="주소"
                         android:inputType="textPersonName"
+                        android:padding="10dp"
                         android:textSize="18sp"
                         tools:ignore="TouchTargetSizeCheck" />
 
@@ -178,9 +181,12 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="10dp"
+                        android:background="@drawable/bold1"
+                        android:backgroundTint="#A5A5A5"
                         android:ems="10"
                         android:hint="강아지 돌봄경험"
                         android:inputType="textPersonName"
+                        android:padding="10dp"
                         tools:ignore="TouchTargetSizeCheck" />
 
 
@@ -226,5 +232,12 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <ImageButton
+        android:id="@+id/backButton9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#faf7f4"
+        android:src="@drawable/arrow" />
 
 </FrameLayout>

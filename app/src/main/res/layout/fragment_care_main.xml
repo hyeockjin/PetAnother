@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/completeButton"
@@ -11,11 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/button7"
@@ -23,6 +19,7 @@
             android:layout_height="46dp"
             android:layout_gravity="center_horizontal|center_vertical"
             android:background="#faf7f4"
+            android:fontFamily="@font/rokaf_bold_medium"
             android:gravity="center"
             android:text="진행현황"
             android:textAlignment="center"
@@ -251,4 +248,4 @@
         android:backgroundTint="#faf7f4"
         android:src="@drawable/arrow" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
