@@ -4,85 +4,103 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:background="#FFFFFF"
     android:clickable="true"
     tools:context=".LoginFragment">
 
 
-    <EditText
-        android:id="@+id/login_id"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:hint="아이디"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="92dp"
-        android:layout_marginBottom="180dp"
-        android:text="회원가입"
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#faf7f4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_button"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="비밀번호를 까먹으셨나요?  |"
-        app:layout_constraintEnd_toStartOf="@+id/register"
-        app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_button" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/login_button"
-        android:layout_width="260dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/pinkbutton"
-        android:backgroundTint="#F8BBD0"
-        android:text="로그인"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_password"
-        tools:ignore="TouchTargetSizeCheck" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/login_password"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:ems="10"
-        android:hint="비밀번호"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_id"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="154dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="170dp"
+                android:src="@drawable/gompang" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="147dp"
-        android:layout_height="143dp"
-        android:layout_marginTop="152dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/logo" />
+            <EditText
+                android:id="@+id/login_id"
+                android:layout_width="260dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:background="@drawable/pinkbutton"
+                android:backgroundTint="#FFFFFF"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="아이디"
+                android:inputType="textEmailAddress"
+                android:textColorHint="#222C18"
+                android:textSize="14sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/login_password"
+                android:layout_width="260dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pinkbutton"
+                android:backgroundTint="#FFFFFF"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="비밀번호"
+                android:inputType="textPassword"
+                android:textColorHint="#222C18"
+                android:textSize="14sp"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text="비밀번호를 까먹으셨나요?  |" />
+
+                <TextView
+                    android:id="@+id/register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text="회원가입" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="260dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/pinkbutton"
+                android:text="로그인"
+                android:textColor="#3D433D"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

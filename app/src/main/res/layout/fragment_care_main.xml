@@ -18,14 +18,15 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/button7"
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_marginTop="20dp"
-            android:gravity="center_horizontal|center_vertical"
+            android:background="#faf7f4"
+            android:gravity="center"
             android:text="진행현황"
-            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textSize="16sp"
             android:textStyle="normal" />
 
         <ImageView
@@ -242,5 +243,12 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/backButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#faf7f4"
+        android:src="@drawable/arrow" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

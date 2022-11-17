@@ -40,13 +40,25 @@
                 tools:context=".MainActivity" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="33dp"
+                android:layout_marginTop="18dp"
+                android:clickable="true"
+                app:backgroundTint="#FFFFFF"
+                app:srcCompat="@drawable/tdolist" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/writeButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="36dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="34dp"
                 android:clickable="true"
                 app:backgroundTint="#A6A8B1"
                 app:srcCompat="@drawable/gps2" />
@@ -57,10 +69,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/writeButton2"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="21dp"
-                android:layout_marginEnd="34dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="36dp"
                 android:clickable="true"
-                app:backgroundTint="#3949AB"
+                app:backgroundTint="#B6CF9B"
                 app:srcCompat="@drawable/pencil" />
 
             <LinearLayout

@@ -12,6 +12,17 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/button17"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="#faf7f4"
+            android:gravity="center"
+            android:text="회원정보수정"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -20,32 +31,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/imageButton3"
-                    android:layout_width="40dp"
-                    android:layout_height="35dp"
-                    android:layout_gravity="bottom"
-                    android:layout_marginLeft="5dp"
-                    android:backgroundTint="#FFFFFF"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/arrow"
-                    android:stateListAnimator="@null"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="match_parent"
-                    android:layout_height="46dp"
-                    android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginRight="30dp"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="돌봄신청정보"
-                    android:textSize="20sp"
-                    android:textStyle="normal" />
-            </LinearLayout>
+                android:orientation="horizontal"/>
         </LinearLayout>
 
         <LinearLayout
@@ -61,7 +47,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
                     <TextView
                         android:id="@+id/textView3"
@@ -122,8 +109,7 @@
                                             android:layout_width="65dp"
                                             android:layout_height="25dp"
                                             android:layout_gravity="end"
-                                            android:background="#573E8B28"
-                                            android:backgroundTint="#573E8B28"
+                                            android:background="@drawable/pinkbutton"
                                             android:text="자세히보기"
                                             android:textSize="10sp"
                                             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
@@ -194,8 +180,7 @@
                                             android:layout_width="65dp"
                                             android:layout_height="25dp"
                                             android:layout_gravity="end"
-                                            android:background="#573E8B28"
-                                            android:backgroundTint="#573E8B28"
+                                            android:background="@drawable/pinkbutton"
                                             android:text="자세히보기"
                                             android:textSize="10sp"
                                             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
@@ -214,23 +199,12 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="110dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:padding="16dp"
@@ -241,6 +215,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:background="@drawable/bold1"
+                                android:backgroundTint="#C6C6C6"
                                 android:text="TextView" />
 
                         </LinearLayout>
@@ -251,7 +227,7 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="110dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:padding="16dp"
@@ -262,6 +238,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:background="@drawable/bold1"
+                                android:backgroundTint="#C6C6C6"
                                 android:text="TextView" />
 
                         </LinearLayout>
@@ -272,7 +250,7 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="110dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:padding="16dp"
@@ -280,8 +258,10 @@
 
                             <TextView
                                 android:id="@+id/textView10"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:background="@drawable/bold1"
+                                android:backgroundTint="#C6C6C6"
                                 android:text="TextView" />
 
                         </LinearLayout>
@@ -293,7 +273,7 @@
 
                             <TextView
                                 android:id="@+id/textView30"
-                                android:layout_width="110dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:padding="16dp"
@@ -301,10 +281,11 @@
 
                             <TextView
                                 android:id="@+id/output2"
-                                android:layout_width="285dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="150dp"
                                 android:layout_marginTop="10dp"
-                                android:background="#F6F6F6"
+                                android:background="@drawable/bold1"
+                                android:backgroundTint="#C6C6C6"
                                 android:gravity="center_vertical"
                                 android:padding="16dp"
                                 android:textSize="14sp"
@@ -325,7 +306,6 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="#573E8B28"
-                            android:backgroundTint="#573E8B28"
                             android:text="할일" />
 
                         <Button
@@ -334,7 +314,6 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="#573E8B28"
-                            android:backgroundTint="#573E8B28"
                             android:text="채팅" />
 
                     </LinearLayout>
@@ -345,5 +324,12 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/backButton12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#faf7f4"
+        android:src="@drawable/arrow" />
 
 </FrameLayout>

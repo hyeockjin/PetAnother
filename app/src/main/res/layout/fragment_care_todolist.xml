@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout"
@@ -13,41 +13,24 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/button16"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:background="#faf7f4"
+            android:fontFamily="@font/rokaf_bold_medium"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="TODO LIST"
+            android:textSize="16sp"
+            android:textStyle="normal" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/imageButton3"
-                android:layout_width="40dp"
-                android:layout_height="35dp"
-                android:layout_gravity="bottom"
-                android:layout_marginLeft="5dp"
-                android:backgroundTint="#FFFFFF"
-                android:scaleType="centerCrop"
-                android:src="@drawable/arrow"
-                android:stateListAnimator="@null"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="30dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="TODO LIST"
-                android:textSize="20sp"
-                android:textStyle="normal" />
-        </LinearLayout>
+            android:orientation="horizontal" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="370dp"
@@ -89,10 +72,9 @@
                     <Button
                         android:id="@+id/button12"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:layout_marginLeft="120dp"
-                        android:background="#573E8B28"
-                        android:backgroundTint="#573E8B28"
+                        android:background="@drawable/pinkbutton"
                         android:text="확인하기" />
 
                 </LinearLayout>
@@ -123,10 +105,9 @@
                     <Button
                         android:id="@+id/button13"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:layout_marginLeft="120dp"
-                        android:background="#573E8B28"
-                        android:backgroundTint="#573E8B28"
+                        android:background="@drawable/pinkbutton"
                         android:text="완료" />
 
                 </LinearLayout>
@@ -157,10 +138,9 @@
                     <Button
                         android:id="@+id/button14"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:layout_marginLeft="120dp"
-                        android:background="#573E8B28"
-                        android:backgroundTint="#573E8B28"
+                        android:background="@drawable/pinkbutton"
                         android:text="미완료"
                         android:textColor="#606060" />
 
@@ -192,10 +172,9 @@
                     <Button
                         android:id="@+id/button15"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:layout_marginLeft="120dp"
-                        android:background="#573E8B28"
-                        android:backgroundTint="#573E8B28"
+                        android:background="@drawable/pinkbutton"
                         android:text="미완료"
                         android:textColor="#6A6A6A" />
 
@@ -230,8 +209,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:layout_marginTop="50dp"
-                    android:background="#573E8B28"
-                    android:backgroundTint="#573E8B28"
+                    android:background="@drawable/pinkbutton"
                     android:text="돌아가기" />
             </LinearLayout>
 
@@ -239,4 +217,11 @@
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageButton
+        android:id="@+id/backButton11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#faf7f4"
+        android:src="@drawable/arrow" />
+
+</FrameLayout>
