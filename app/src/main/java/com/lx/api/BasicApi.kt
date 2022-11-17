@@ -40,7 +40,8 @@ interface BasicApi {
 
     @GET("/care/memberListTest")
     fun getMemberRequestList(
-        @Query("requestCode") requestCode: String
+        @Query("requestCode") requestCode: String,
+        @Query("requestCode") awrn: String
     ): Call<MemberRequestResponse>
 
     /**

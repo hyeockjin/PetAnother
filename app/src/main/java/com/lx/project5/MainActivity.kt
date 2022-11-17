@@ -247,7 +247,8 @@ class MainActivity : AppCompatActivity() {
 
     fun showNearLocationMarker(map: GoogleMap) {
         BasicClient.api.getMemberRequestList(
-            requestCode = "1001"
+            requestCode = "1001",
+            awrn = WriteRegisterData.awrn.toString()
         ).enqueue(object : Callback<MemberRequestResponse> {
             override fun onResponse(call: Call<MemberRequestResponse>, response: Response<MemberRequestResponse>) {
                 Log.v("lastkingdom","근처 마커 활성화 요청 성공")
@@ -279,17 +280,14 @@ class MainActivity : AppCompatActivity() {
                             binding.classSelf.text = this.assignTitle.toString()
                             WriteRegisterData.memberNo = this.memberNo
                             WriteRegisterData.dogNo = this.dogNo
-                            WriteRegisterData.assignTitle = this.assignTitle
-                            WriteRegisterData.assignContent = this.assignContent
-                            WriteRegisterData.startTime = this.startTime
-                            WriteRegisterData.endTime = this.endTime
+                            WriteRegisterData.awrn = this.awrn
 
                             //bundle 추가한 부눈
                             bundle.putString("memberName",this.memberName)
                             bundle.putString("memberAddress",this.memberAddress)
                             bundle.putString("assignTitle",this.assignTitle)
 
-                            Log.v("야", "${WriteRegisterData.startTime}")
+                            Log.v("야", "${WriteRegisterData.assignContent}")
 
                         }
 
@@ -367,6 +365,42 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             override fun onFailure(call: Call<DogListResponse>, t: Throwable) {
+
+            }
+
+        })
+
+        //
+        BasicClient.api.getMemberRequestList(
+            requestCode = "1001",
+            awrn = WriteRegisterData?.awrn.toString()
+
+        ).enqueue(object : Callback<MemberRequestResponse> {
+            override fun onResponse(call: Call<MemberRequestResponse>, response: Response<MemberRequestResponse>) {
+                AppData.writeRegisterData = WriteRegisterData()
+                response.body()?.data?.get(0)?.apply {
+                    WriteRegisterData?.awrn = this.awrn
+                    WriteRegisterData?.memberNo = this.memberNo
+                    WriteRegisterData?.dogNo = this.dogNo
+                    WriteRegisterData?.assignTitle = this.assignTitle
+                    WriteRegisterData?.assignContent = this.assignContent
+                    WriteRegisterData?.startTime = this.startTime
+                    WriteRegisterData?.endTime = this.endTime
+
+
+                    // 추가한 부분
+                    bundle.putString("awrn",this.awrn.toString())
+                    bundle.putString("memberNo",this.memberNo.toString())
+                    bundle.putString("dogNo",this.dogNo.toString())
+                    bundle.putString("assignTitle",this.assignTitle)
+                    bundle.putString("assignContent",this.assignContent)
+                    bundle.putString("startTime",this.startTime)
+                    bundle.putString("endTime",this.endTime)
+
+                    Log.v("멍청이", "${this}")
+                }
+            }
+            override fun onFailure(call: Call<MemberRequestResponse>, t: Throwable) {
 
             }
 

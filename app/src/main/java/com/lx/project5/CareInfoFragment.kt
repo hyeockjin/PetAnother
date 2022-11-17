@@ -94,8 +94,6 @@ class CareInfoFragment : Fragment() {
 
                 //binding.nameOutput.text = AppData.memberData?.memberName
                 //binding.outputDogName.text = AppData.dogData?.dogName //
-                Log.v("멍","${WriteRegisterData.startTime}~${WriteRegisterData.endTime}")
-                Log.v("야","${WriteRegisterData.assignTitle}")
                 Log.v("야","${WriteRegisterData.assignContent}")
             }
 
