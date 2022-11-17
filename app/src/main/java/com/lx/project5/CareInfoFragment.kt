@@ -56,7 +56,7 @@ class CareInfoFragment : Fragment() {
         if(AppData.goIndex == 2){
             AppData.memberData.apply{
                 this?.memberImage?.let{
-                    val uri = Uri.parse("http://192.168.0.12:8001${memberImage}")
+                    val uri = Uri.parse("http://192.168.0.15:8001${memberImage}")
                     Glide.with(binding.profileView).load(uri).into(binding.profileView)
                 }
                 val assignTime = "${AppData.choiceRegisterItem?.startTime} ~ ${AppData.choiceRegisterItem?.endTime}"
@@ -72,7 +72,7 @@ class CareInfoFragment : Fragment() {
             Log.v("멍청이2", "사람 ${AppData.memberData}, 개 ${AppData.dogData}")
             AppData.memberData.apply{
                 this?.memberImage?.let{
-                    val uri = Uri.parse("http://192.168.0.12:8001${memberImage}")
+                    val uri = Uri.parse("http://192.168.0.15:8001${memberImage}")
                     Glide.with(binding.profileView).load(uri).into(binding.profileView)
                 }
                 binding.outputTime.text = "${AppData.writeRegisterItem?.startTime} ~ ${AppData.writeRegisterItem?.endTime}"

@@ -44,6 +44,8 @@ class ChoiceRegisterFragment : Fragment() {
         // 실제 데이터를 관리하고 각 아이템의 모양을 만들어주는 것
         choiceRegisterAdapter = ChoiceRegisterAdapter()
         binding.crrv.adapter = choiceRegisterAdapter
+        //?
+
 
         // 4. 아이템을 클릭했을 때 동작할 코드 넣어주기
         choiceRegisterAdapter?.listener = object: OnChoiceRegisterItemClickListener {
@@ -57,6 +59,7 @@ class ChoiceRegisterFragment : Fragment() {
                     Log.v("멍청이11", "${AppData.choiceRegisterItem?.memberNo}")
                     AppData.goIndex = 2
                     pushChoiceRegisterData()
+
 
 
 
@@ -77,12 +80,11 @@ class ChoiceRegisterFragment : Fragment() {
             requestCode = "1001",
             memberNo = AppData.choiceRegisterItem?.memberNo.toString()
 
-
-
         ).enqueue(object : Callback<MemberListResponse> {
             override fun onResponse(call: Call<MemberListResponse>, response: Response<MemberListResponse>) {
 
                 AppData.memberData = MemberData()
+                AppData.memberData?.memberNo = response.body()?.data?.get(0)?.memberNo
                 AppData.memberData?.memberAddress = response.body()?.data?.get(0)?.memberAddress
                 AppData.memberData?.memberImage = response.body()?.data?.get(0)?.memberImage
                 AppData.memberData?.memberName = response.body()?.data?.get(0)?.memberName
@@ -113,15 +115,13 @@ class ChoiceRegisterFragment : Fragment() {
                 AppData.dogData?.dogGender = response.body()?.data?.get(0)?.dogGender.toString()
 
                 Log.v("멍청이1", "${AppData.dogData?.dogNo}")
+                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareInfo)
 
             }
             override fun onFailure(call: Call<DogListResponse>, t: Throwable) {
 
             }
-
         })
-        (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareInfo)
-
     }
 
 
