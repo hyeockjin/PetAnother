@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
 
     var myMarker: Marker? = null
 
+
     enum class ScreenItem {
         ITEM1,
         ITEM2,
@@ -73,6 +74,8 @@ class MainActivity : AppCompatActivity() {
     val dateFormat1 = SimpleDateFormat("yyyyMMddHHmmss")
     var filename: String? = null
 
+    val bundle = Bundle()
+
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
         val imm: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
@@ -91,8 +94,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.cardView.setOnClickListener{
-            onFragmentChanged(ScreenItem.ITEMcareInfo)
+            infoView()
         }
+
+
         //하단 탭의 버튼을 눌렀을때
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId) {
@@ -142,17 +147,6 @@ class MainActivity : AppCompatActivity() {
             // 내 위치 요청하기
             requestLocation()
 
-//            // 마커 클릭 시 처리
-//            map.setOnMarkerClickListener {
-//                // showToast("마커 클릭됨 : ${it.tag}, ${it.title}")
-//
-//                // 필요시 다른 화면으로 이동 (tag 정보를 이용해서 구분함)
-//                binding.cardView.visibility = View.VISIBLE
-//
-//
-//                true
-//            }
-
             // 지도 클릭 시 처리
             map.setOnMapClickListener {
                 //showToast("지도 클릭됨 : ${it.latitude}, ${it.longitude}")
@@ -175,7 +169,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-    fun onFragmentChanged(index:ScreenItem) {
+    fun onFragmentChanged(index: MainActivity.ScreenItem) {
         when(index) {
             ScreenItem.ITEM1 -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, FirstFragment()).commit()
@@ -279,15 +273,31 @@ class MainActivity : AppCompatActivity() {
                     // 마커클릭
                     map.setOnMarkerClickListener {
 
-                        binding.className.text = response.body()?.data?.get(i)?.memberName.toString()
-                        binding.classAddress.text = response.body()?.data?.get(i)?.memberAddress.toString()
-                        binding.classSelf.text = response.body()?.data?.get(i)?.assignTitle.toString()
-                        AppData.writeRegisterItem?.awrn = response.body()?.data?.get(i)?.awrn!!
-                        infoView()
+                        response.body()?.data?.get(i)?.apply {
+                            binding.className.text = this.memberName.toString()
+                            binding.classAddress.text = this.memberAddress.toString()
+                            binding.classSelf.text = this.assignTitle.toString()
+                            WriteRegisterData.memberNo = this.memberNo
+                            WriteRegisterData.dogNo = this.dogNo
+                            WriteRegisterData.assignTitle = this.assignTitle
+                            WriteRegisterData.assignContent = this.assignContent
+                            WriteRegisterData.startTime = this.startTime
+                            WriteRegisterData.endTime = this.endTime
+
+                            //bundle 추가한 부눈
+                            bundle.putString("memberName",this.memberName)
+                            bundle.putString("memberAddress",this.memberAddress)
+                            bundle.putString("assignTitle",this.assignTitle)
+
+                            Log.v("야", "${WriteRegisterData.startTime}")
+
+                        }
+
                         AppData.goIndex = 1
                         binding.cardView.visibility = View.VISIBLE
 
                         true
+
                     }
                 }
             }
@@ -297,60 +307,76 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-
-     fun infoView() {
+    fun infoView() {
         // 사람 정보 부터
         BasicClient.api.getMemberInfo(
-            requestCode = "1001",
-            memberNo = AppData.writeRegisterItem?.memberNo.toString()
+        requestCode = "1001",
+        memberNo = WriteRegisterData?.memberNo.toString()
 
         ).enqueue(object : Callback<MemberListResponse> {
             override fun onResponse(call: Call<MemberListResponse>, response: Response<MemberListResponse>) {
+                AppData.memberData = MemberData()
+                response.body()?.data?.get(0)?.apply {
+                    AppData.memberData?.memberAddress = this.memberAddress
+                    AppData.memberData?.memberImage = this.memberImage
+                    AppData.memberData?.memberName = this.memberName
+                    AppData.memberData?.memberNo = this.memberNo
 
-                AppData.memberData?.memberAddress = response.body()?.data?.get(0)?.memberAddress
-                AppData.memberData?.memberImage = response.body()?.data?.get(0)?.memberImage
-                AppData.memberData?.memberName = response.body()?.data?.get(0)?.memberName
-                AppData.memberData?.memberNo = response.body()?.data?.get(0)?.memberNo
-                Log.v("멍청이", "${response.body()?.data?.get(0)}")
+                    // 추가한 부분
+                    bundle.putString("memberAddress",this.memberAddress)
+                    bundle.putString("memberImage",this.memberImage)
+                    bundle.putString("memberName",this.memberName)
+                    bundle.putString("memberNo",this.memberNo)
 
-
-                showToast("1")
+                    Log.v("멍청이", "${this}")
+                }
             }
             override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
 
-                showToast("2")
             }
 
         })
+
         // 그다음 개정보
         BasicClient.api.getDogInfo(
             requestCode = "1001",
-            dogNo = AppData.writeRegisterItem?.dogNo.toString()
+            dogNo = WriteRegisterData?.dogNo.toString()
 
         ).enqueue(object : Callback<DogListResponse> {
             override fun onResponse(call: Call<DogListResponse>, response: Response<DogListResponse>) {
+                AppData.dogData = PetData()
+                response.body()?.data?.get(0)?.apply {
+                    AppData.dogData?.dogNo = this.dogNo
+                    AppData.dogData?.dogAge = this.dogAge
+                    AppData.dogData?.dogImage = this.dogImage
+                    AppData.dogData?.dogBreed = this.dogBreed
+                    AppData.dogData?.dogCharacter = this.dogCharacter
+                    AppData.dogData?.dogEducation = this.dogEducation
+                    AppData.dogData?.dogGender = this.dogGender
 
-                AppData.dogData?.dogNo = response.body()?.data?.get(0)?.dogNo.toString()
-                AppData.dogData?.dogAge = response.body()?.data?.get(0)?.dogAge.toString()
-                AppData.dogData?.dogImage = response.body()?.data?.get(0)?.dogImage.toString()
-                AppData.dogData?.dogBreed = response.body()?.data?.get(0)?.dogBreed.toString()
-                AppData.dogData?.dogCharacter = response.body()?.data?.get(0)?.dogCharacter.toString()
-                AppData.dogData?.dogEducation = response.body()?.data?.get(0)?.dogEducation.toString()
-                AppData.dogData?.dogGender = response.body()?.data?.get(0)?.dogGender.toString()
-                Log.v("멍청이", "${response.body()?.data?.get(0)}")
+                    // 추가한 부분
+                    bundle.putString("dogNo",this.dogNo)
+                    bundle.putString("dogAge",this.dogAge)
+                    bundle.putString("dogImage",this.dogImage)
+                    bundle.putString("dogBreed",this.dogBreed)
+                    bundle.putString("dogCharacter",this.dogCharacter)
+                    bundle.putString("dogEducation",this.dogEducation)
+                    bundle.putString("dogGender",this.dogGender)
 
-
-                showToast("1")
+                    Log.v("멍청이", "${this}")
+                }
             }
             override fun onFailure(call: Call<DogListResponse>, t: Throwable) {
 
-                showToast("2")
             }
 
         })
-         binding.cardView.visibility = View.VISIBLE
 
+        replaceFragment(bundle)
+
+        onFragmentChanged(ScreenItem.ITEMcareInfo)
     }
+
 
 
 
@@ -462,6 +488,15 @@ class MainActivity : AppCompatActivity() {
 
 
         })
+    }
+
+    // @@@@@@@@test
+    fun replaceFragment(bundle: Bundle) {
+        val destination = CareInfoFragment()
+        destination.arguments = bundle      // 닉네임을 받아옴
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container, destination)
+            .commit()
     }
 
     fun showToast(message:String) {

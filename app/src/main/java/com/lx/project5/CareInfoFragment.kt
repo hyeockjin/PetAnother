@@ -1,5 +1,6 @@
 package com.lx.project5
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.lx.api.BasicApi
 import com.lx.api.BasicClient
@@ -21,9 +23,14 @@ class CareInfoFragment : Fragment() {
     var _binding: FragmentCareInfoBinding? = null
     val binding get() = _binding!!
 
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentCareInfoBinding.inflate(inflater, container, false)
-        initView()
+
+        savedInstanceState?.apply {
+            initView(savedInstanceState)
+        }
+
 
 
         binding.button5.setOnClickListener {
@@ -46,13 +53,11 @@ class CareInfoFragment : Fragment() {
 
         }
 
-
-
         return binding.root
     }
-    fun initView(){
 
-        Log.v("멍청이2", "사람 ${AppData.memberData?.memberNo}, 개 ${AppData.dogData?.dogNo}")
+    fun initView(bundle: Bundle){
+
         if(AppData.goIndex == 2){
             AppData.memberData.apply{
                 this?.memberImage?.let{
@@ -69,24 +74,36 @@ class CareInfoFragment : Fragment() {
 
 
         }else if (AppData.goIndex == 1){
-            Log.v("멍청이2", "사람 ${AppData.memberData}, 개 ${AppData.dogData}")
-            AppData.memberData.apply{
-                this?.memberImage?.let{
+            AppData.memberData.apply {
+                this?.memberImage?.let {
                     val uri = Uri.parse("http://192.168.0.15:8001${memberImage}")
                     Glide.with(binding.profileView).load(uri).into(binding.profileView)
                 }
-                binding.outputTime.text = "${AppData.writeRegisterItem?.startTime} ~ ${AppData.writeRegisterItem?.endTime}"
-                binding.nameOutput.text = AppData.memberData?.memberName
-                binding.outputDogName.text = AppData.dogData?.dogName
+
+                //binding.outputTime.text = bundle.getString("","0")
+                binding.nameOutput.text = bundle.getString("memberName", "0")
+                binding.outputDogName.text = bundle.getString("dogName", "0")
+            }
+
+            WriteRegisterData.apply {
+                binding.outputTime.text = "${bundle.getString("startTime", "0")}~${bundle.getString("endTime","0")}"
+                binding.textView10.text = bundle.getString("assignTitle", "0")
+                binding.output2.text = bundle.getString("assignContent", "0")
 
             }
 
+                //binding.nameOutput.text = AppData.memberData?.memberName
+                //binding.outputDogName.text = AppData.dogData?.dogName //
+                Log.v("멍","${WriteRegisterData.startTime}~${WriteRegisterData.endTime}")
+                Log.v("야","${WriteRegisterData.assignTitle}")
+                Log.v("야","${WriteRegisterData.assignContent}")
+            }
 
-        }
 
+
+            }
 
 
 
     }
 
-}

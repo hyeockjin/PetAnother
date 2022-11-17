@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.lx.project5.databinding.FragmentCareInfoBinding
+import com.lx.project5.databinding.FragmentDogInfoBinding
 import com.lx.project5.databinding.FragmentMemberInfoBinding
 
 class MemberInfoFragment : Fragment() {
@@ -15,10 +16,12 @@ class MemberInfoFragment : Fragment() {
     val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        _binding = FragmentMemberInfoBinding.inflate(inflater, container, false)
+
         initView()
 
         binding.backButton4.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareMain)
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareInfo)
         }
         return binding.root
     }

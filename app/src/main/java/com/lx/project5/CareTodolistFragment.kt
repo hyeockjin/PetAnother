@@ -16,12 +16,12 @@ class CareTodolistFragment : Fragment() {
         _binding = FragmentCareTodolistBinding.inflate(inflater, container, false)
 
         binding.button4.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareMain)
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareInfo)
 
         }
 
         binding.imageButton3.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareMain)
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareInfo)
 
         }
 

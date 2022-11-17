@@ -212,7 +212,7 @@ class Join2Fragment : Fragment() {
             careName = registerName,
             careExperience = registerExperience,
             careEducation = "1",
-            careImage = AppData.filepath!!,
+            careImage = filepath!!,
             careApproval = "1",
             careAddress = registerAddress,
             lat = lat!!,

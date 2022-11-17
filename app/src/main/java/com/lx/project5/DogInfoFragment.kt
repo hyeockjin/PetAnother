@@ -20,7 +20,7 @@ class DogInfoFragment : Fragment() {
         initView()
 
         binding.backButton3.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareMain)
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareInfo)
         }
 
         return binding.root
