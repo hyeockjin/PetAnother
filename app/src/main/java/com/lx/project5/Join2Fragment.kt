@@ -7,6 +7,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -90,7 +91,7 @@ class Join2Fragment : Fragment() {
         initView()
         writeShow()
 
-        binding.nextButton7.setOnClickListener {
+        binding.nextButton17.setOnClickListener {
             checkPw()
         }
 
@@ -133,6 +134,7 @@ class Join2Fragment : Fragment() {
 
     //비밀번호 확인 맞을때만 회원가입 가능하게 하기
     fun checkPw() {
+        Log.v("회원가입", "버튼눌렀을때")
         var registerPw = binding.registerPw.text.toString()
         var pwCheck = binding.pwCheck.text.toString()
 
@@ -195,6 +197,7 @@ class Join2Fragment : Fragment() {
 
     //돌보미리스트 추가 [파라미터]
     fun postCareAdd(){
+        Log.v("회원가입","123")
 
         var registerId = binding.registerId.text.toString()
         var registerName = binding.registerName.text.toString()

@@ -27,7 +27,10 @@ class CareInfoFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentCareInfoBinding.inflate(inflater, container, false)
 
+        Log.v("갤럭시9", "${AppData.goIndex}")
+        initView1()
         savedInstanceState?.apply {
+            Log.v("갤럭시6", "${AppData.choiceRegisterItem}")
             initView(savedInstanceState)
         }
 
@@ -56,9 +59,9 @@ class CareInfoFragment : Fragment() {
         return binding.root
     }
 
-    fun initView(bundle: Bundle){
-
+    fun initView1(){
         if(AppData.goIndex == 2){
+            Log.v("갤럭시6", "${AppData.choiceRegisterItem}")
             AppData.memberData.apply{
                 this?.memberImage?.let{
                     val uri = Uri.parse("http://172.168.10.3:8001${memberImage}")
@@ -68,6 +71,29 @@ class CareInfoFragment : Fragment() {
                 binding.outputTime.text = assignTime
                 binding.nameOutput.text = AppData.memberData?.memberName
                 binding.outputDogName.text = AppData.dogData?.dogName
+                binding.outputTime.text = "${AppData.choiceRegisterItem?.startTime} ~ ${AppData.choiceRegisterItem?.endTime}"
+
+            }
+
+
+
+        }
+    }
+
+    fun initView(bundle: Bundle){
+
+        if(AppData.goIndex == 2){
+            Log.v("갤럭시6", "${AppData.choiceRegisterItem}")
+            AppData.memberData.apply{
+                this?.memberImage?.let{
+                    val uri = Uri.parse("http://172.168.10.3:8001${memberImage}")
+                    Glide.with(binding.profileView).load(uri).into(binding.profileView)
+                }
+                val assignTime = "${AppData.choiceRegisterItem?.startTime} ~ ${AppData.choiceRegisterItem?.endTime}"
+                binding.outputTime.text = assignTime
+                binding.nameOutput.text = AppData.memberData?.memberName
+                binding.outputDogName.text = AppData.dogData?.dogName
+                binding.outputTime.text = "${AppData.choiceRegisterItem?.startTime} ~ ${AppData.choiceRegisterItem?.endTime}"
 
             }
 
