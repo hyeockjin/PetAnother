@@ -3,30 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/drawable-v24/bold4.xml" value="0.3325" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/drawable/bold3.xml" value="0.3325" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/activity_local.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_assess.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_care_info.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_care_info_update.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_care_main.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_care_todolist.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_choice_register.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_complete.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_complete_sue.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_dog_info.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_end.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_join1.xml" value="0.3212962962962963" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_join2.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_login.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_member_info.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_member_info_update.xml" value="0.3605128205128205" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_my_page.xml" value="0.33" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_reservation.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_sue.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_write.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/choyd/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_write_list.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/activity_splash.xml" value="0.26875" />
         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_add_dog.xml" value="0.26875" />
         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_care_info.xml" value="0.3625" />
@@ -39,10 +15,6 @@
         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_my_page.xml" value="0.30925925925925923" />
         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_second.xml" value="0.26875" />
         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_third.xml" value="0.26875" />
-        <entry key="..\:/Users/khm24/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_care_info.xml" value="0.33" />
-        <entry key="..\:/Users/khm24/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_choice_register.xml" value="0.2101851851851852" />
-        <entry key="..\:/Users/khm24/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_join2.xml" value="0.26875" />
-        <entry key="..\:/Users/khm24/AndroidStudioProjects/PetAnother/app/src/main/res/layout/fragment_login.xml" value="0.26875" />
         <entry key="..\:/Users/khm24/FinalProject/app/src/main/res/layout/activity_main.xml" value="0.26875" />
         <entry key="..\:/Users/khm24/FinalProject/app/src/main/res/layout/fragment_view_pager1.xml" value="0.12239583333333333" />
         <entry key="..\:/Users/khm24/FinalProject/app/src/main/res/layout/fragment_view_pager2.xml" value="0.12239583333333333" />
@@ -50,6 +22,55 @@
         <entry key="..\:/Users/kom59/AndroidStudioProjects/Pet/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/kom59/AndroidStudioProjects/Pet/app/src/main/res/layout/activity_splash.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/kom59/AndroidStudioProjects/Pet1/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/drawable-v24/bold.xml" value="0.1" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/drawable-v24/bold1.xml" value="0.1" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/drawable-v24/bold3.xml" value="0.1" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/drawable-v24/graybutton.xml" value="0.1" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/drawable-v24/greenround.xml" value="0.1" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/drawable-v24/pinkbutton.xml" value="0.255" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/drawable/bold.xml" value="0.2005" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/drawable/bold1.xml" value="0.1" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/drawable/bold2.xml" value="0.2005" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/drawable/bold3.xml" value="0.1" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/drawable/pinkbutton.xml" value="0.208" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/activity_local.xml" value="0.264" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/activity_main.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/activity_splash.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/care_item.xml" value="0.264" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/choice_register_item.xml" value="0.383248730964467" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_add_dog.xml" value="0.264" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_ask.xml" value="0.264" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_assess.xml" value="0.264" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_care_info.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_care_info_update.xml" value="0.2" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_care_item.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_care_main.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_care_todolist.xml" value="0.2" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_choice_register.xml" value="0.2453125" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_complete.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_complete_sue.xml" value="0.2453125" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_dog_info.xml" value="0.2453125" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_dog_item.xml" value="0.72" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_edit_dog.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_end.xml" value="0.16041666666666668" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_first.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_join1.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_join2.xml" value="0.4" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_login.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_member_info.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_my_page.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_pay.xml" value="0.4655004859086492" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_reservation.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_second.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_sue.xml" value="0.2" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_third.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_video.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_view_pager1.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_write.xml" value="0.264" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_write_item.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_write_list.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/layout/fragment_writeandlist.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Home/PetAnother/app/src/main/res/menu/menu_tab.xml" value="0.1" />
         <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1035" />
         <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/drawable/bold.xml" value="0.1035" />
         <entry key="..\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/drawable/bold1.xml" value="0.1035" />

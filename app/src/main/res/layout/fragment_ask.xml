@@ -48,7 +48,7 @@
                     android:layout_height="130dp"
                     android:layout_gravity="center_horizontal">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/memImageView"
                         android:layout_width="136dp"
                         android:layout_height="111dp"
